@@ -22,24 +22,30 @@ function errorSq(y_expected, y_predicted) {
 }
 
 function printProgress(i, m, b, ys, xs) {
-  console.log(`step ${i}: m=${m.dataSync()}, b=${b.dataSync()}, error sqd=${errorSq(ys, equation(m, xs, b)).dataSync()}`);
+  let error_sq = errorSq(tf.tensor(ys), equation(tf.tensor(m), tf.tensor(xs), tf.tensor(b))).dataSync();
+  console.log(`step ${i}: m=${m}, b=${b}, error sqd=${error_sq}`);
 }
 
 async function run() {
   console.log("tf", tf);
   const m_init = 0 ;
-  var m = tf.variable(tf.scalar(m_init));
+  const m = tf.variable(tf.scalar(m_init));
   const b_init = 0 ;
-  var b = tf.variable(tf.scalar(b_init));
-  var xs = tf.tensor([1, 2, 3, 4, 5]);
-  var ys = xs.add(1);
+  const b = tf.variable(tf.scalar(b_init));
+  const xs = tf.tensor([1, 2, 3, 4, 5]);
+  const ys = xs.add(1);
 
   const tries = 400;
+  let numberOfSteps = 10;
+  const stepSize = Math.floor(tries/ numberOfSteps);
+  console.log(`sample frequency: ${stepSize}`);
   const learningRate = 0.01;
-  var optimizer = tf.train.sgd(learningRate);
+  const optimizer = tf.train.sgd(learningRate);
+  // tfvis.show.modelSummary({ name: "Model Summary" }, optimizer);
 
   console.log('m initial', m.dataSync());
   console.log('b initial', b.dataSync());
+  let history = [];
   for (let i = 0; i < tries; i++) {
     tf.tidy(() => { // automatically clean up tensors from the GPU
       optimizer.minimize(() => {
@@ -47,13 +53,34 @@ async function run() {
         const error_sq = errorSq(ys, y_new);
         return error_sq;
       });
-      if (!(i % 10)) {
-        printProgress(i, m, b, ys, xs);
+      if (!(i % stepSize)) {
+        history.push({
+          i,
+          m: m.dataSync(),
+          b: b.dataSync(),
+          xs: xs.dataSync(),
+          ys: ys.dataSync(),
+        });
       }
     });
   }
 
-  printProgress(tries, m, b, ys, xs);
+  
+  tf.tidy(() => { // automatically clean up tensors from the GPU
+    history.push({
+      i: tries,
+      m: m.dataSync(),
+      b: b.dataSync(),
+      xs: xs.dataSync(),
+      ys: ys.dataSync(),
+    });
+
+    for (let i = 0; i < history.length; i++) {
+      const item = history[i];
+      printProgress(item.i, item.m, item.b, item.ys, item.xs);
+    }
+    history = [];
+  });
   
   // const values = data.map((d) => ({
   //   x: d.horsepower,
