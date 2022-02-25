@@ -1,3 +1,3 @@
-Implementation of TensorFlow.js — Making Predictions from 2D Data at:
+Parameter Optimization:
 
-https://codelabs.developers.google.com/codelabs/tfjs-training-regression/index.html
+https://codecraft.tv/courses/tensorflowjs/tensors/optimisation/

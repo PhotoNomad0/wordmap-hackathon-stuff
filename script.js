@@ -21,6 +21,10 @@ function errorSq(y_expected, y_predicted) {
   return y_expected.sub(y_predicted).square().mean();
 }
 
+function printProgress(i, m, b, ys, xs) {
+  console.log(`step ${i}: m=${m.dataSync()}, b=${b.dataSync()}, error sqd=${errorSq(ys, equation(m, xs, b)).dataSync()}`);
+}
+
 async function run() {
   console.log("tf", tf);
   const m_init = 0 ;
@@ -28,7 +32,7 @@ async function run() {
   const b_init = 0 ;
   var b = tf.variable(tf.scalar(b_init));
   var xs = tf.tensor([1, 2, 3, 4, 5]);
-  var ys = tf.tensor([2, 3, 4, 5, 6]);
+  var ys = xs.add(1);
 
   const tries = 400;
   const learningRate = 0.01;
@@ -44,16 +48,13 @@ async function run() {
         return error_sq;
       });
       if (!(i % 10)) {
-        console.log(`error_sq step ${i}`, errorSq(ys, equation(m, xs, b)).dataSync());
-        console.log(`m step ${i}`, m.dataSync());
-        console.log(`b step ${i}`, b.dataSync());
+        printProgress(i, m, b, ys, xs);
       }
     });
   }
 
-  console.log(`m after ${tries} steps`, m.dataSync());
-  console.log(`b after ${tries} steps`, b.dataSync());
-
+  printProgress(tries, m, b, ys, xs);
+  
   // const values = data.map((d) => ({
   //   x: d.horsepower,
   //   y: d.mpg
