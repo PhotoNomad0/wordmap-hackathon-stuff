@@ -33,7 +33,9 @@ async function run() {
   const b_init = 0 ;
   const b = tf.variable(tf.scalar(b_init));
   const xs = tf.tensor([1, 2, 3, 4, 5]);
-  const ys = xs.add(0.5);
+  const b_actual = 0.5;
+  const m_actual = 1;
+  const ys = xs.mul(m_actual).add(b_actual);
 
   const tries = 400;
   let numberOfSteps = 20;
@@ -75,27 +77,42 @@ async function run() {
       ys: ys.dataSync(),
     });
 
+    // build chart
     let mSeries = [];
     let bSeries = [];
+    let mError = [];
+    let bError = [];
     for (let i = 0; i < history.length; i++) {
       const item = history[i];
-      printProgress(item.i, item.m, item.b, item.ys, item.xs);
+      const step = item.i;
+      printProgress(step, item.m, item.b, item.ys, item.xs);
       mSeries.push({
-        x: item.i,
+        x: step,
         y: item.m,
       })
+      mError.push({
+        x: step,
+        y: Math.abs(item.m - m_actual),
+      })
       bSeries.push({
-        x: item.i,
+        x: step,
         y: item.b,
+      })
+      bError.push({
+        x: step,
+        y: Math.abs(item.b - b_actual),
       })
     }
 
-    const series = ['m guess', 'b guess'];
-    const data = { values: [mSeries, bSeries], series};
+    const series = ['m guess', 'b guess', 'm error', 'b error'];
+    const data = { values: [mSeries, bSeries, mError, bError], series};
     const opts = { xLabel: 'step', yLabel: 'parameter'}
     const surface = { name: `Solving for m and b in y=m*x+b`, tab: 'Parameter Optimization'};
     tfvis.render.linechart(surface, data, opts);
     mSeries = [];
+    bSeries = [];
+    mError = [];
+    bError = [];
     history = [];
   });
   
