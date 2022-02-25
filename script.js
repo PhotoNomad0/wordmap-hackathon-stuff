@@ -33,13 +33,13 @@ async function run() {
   const b_init = 0 ;
   const b = tf.variable(tf.scalar(b_init));
   const xs = tf.tensor([1, 2, 3, 4, 5]);
-  const ys = xs.add(1);
+  const ys = xs.add(0.5);
 
   const tries = 400;
-  let numberOfSteps = 10;
+  let numberOfSteps = 20;
   const stepSize = Math.floor(tries/ numberOfSteps);
   console.log(`sample frequency: ${stepSize}`);
-  const learningRate = 0.01;
+  const learningRate = 0.005;
   const optimizer = tf.train.sgd(learningRate);
   // tfvis.show.modelSummary({ name: "Model Summary" }, optimizer);
 
@@ -48,11 +48,6 @@ async function run() {
   let history = [];
   for (let i = 0; i < tries; i++) {
     tf.tidy(() => { // automatically clean up tensors from the GPU
-      optimizer.minimize(() => {
-        const y_new = equation(m, xs, b);
-        const error_sq = errorSq(ys, y_new);
-        return error_sq;
-      });
       if (!(i % stepSize)) {
         history.push({
           i,
@@ -62,6 +57,11 @@ async function run() {
           ys: ys.dataSync(),
         });
       }
+      optimizer.minimize(() => {
+        const y_new = equation(m, xs, b);
+        const error_sq = errorSq(ys, y_new);
+        return error_sq;
+      });
     });
   }
 
@@ -75,45 +75,30 @@ async function run() {
       ys: ys.dataSync(),
     });
 
+    let mSeries = [];
+    let bSeries = [];
     for (let i = 0; i < history.length; i++) {
       const item = history[i];
       printProgress(item.i, item.m, item.b, item.ys, item.xs);
+      mSeries.push({
+        x: item.i,
+        y: item.m,
+      })
+      bSeries.push({
+        x: item.i,
+        y: item.b,
+      })
     }
+
+    const series = ['m guess', 'b guess'];
+    const data = { values: [mSeries, bSeries], series};
+    const opts = { xLabel: 'step', yLabel: 'parameter'}
+    const surface = { name: `Solving for m and b in y=m*x+b`, tab: 'Parameter Optimization'};
+    tfvis.render.linechart(surface, data, opts);
+    mSeries = [];
     history = [];
   });
   
-  // const values = data.map((d) => ({
-  //   x: d.horsepower,
-  //   y: d.mpg
-  // }));
-
-  // tfvis.render.scatterplot(
-  //   { name: "Input vs output" },
-  //   { values },
-  //   {
-  //     xLabel: "x",
-  //     yLabel: "y",
-  //     height: 300
-  //   }
-  // );
-
-  // // Create the model
-  // const model = createModel();
-  // tfvis.show.modelSummary({ name: "Model Summary" }, model);
-
-  // // Convert the data to a form we can use for training.
-  // const tensorData = convertToTensor(data);
-  // const { inputs, labels } = tensorData;
-
-  // // Train the model
-  // await trainModel(model, inputs, labels);
-  // console.log("Done Training");
-
-  // // Make some predictions using the model and compare them to the
-  // // original data
-  // testModel(model, data, tensorData);
-
-  // More code will be added below
 }
 
 document.addEventListener("DOMContentLoaded", run);
