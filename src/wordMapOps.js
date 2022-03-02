@@ -36,27 +36,41 @@ export const getPredictions = (map, sourceVerseText, targetVerseText) => new Pro
  * @param targetVerseText
  * @return {Promise<*>}
  */
-export const getSuggestions = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
-  setTimeout(() => {
-    const suggestions = map.predict(sourceVerseText, targetVerseText);
+export function getSuggestions(map, sourceVerseText, targetVerseText) {
+  const suggestions = map.predict(sourceVerseText, targetVerseText);
 
-    if (suggestions[0]) {
-      resolve(suggestions[0].predictions);
+  if (suggestions[0]) {
+    return suggestions[0].predictions;
+  }
+  return null;
+}
+
+export function getAlignmentsByVerse(alignment_data) {
+  const alignmentsByVerse = {};
+  for (const a of alignment_data) {
+    const reference = a.reference;
+    let chapterAlign = alignmentsByVerse[reference.chapter];
+    if (!chapterAlign) {
+      chapterAlign = {};
+      alignmentsByVerse[reference.chapter] = chapterAlign;
     }
-    resolve();
-  }, 0);
-});
-
-export const predictCorpus = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
-  setTimeout(() => {
-    const suggestions = map.predict(sourceVerseText, targetVerseText);
-
-    if (suggestions[0]) {
-      resolve(suggestions[0].predictions);
+    let verseAlign = chapterAlign[reference.verse];
+    if (!verseAlign) {
+      verseAlign = [];
+      chapterAlign[reference.verse] = verseAlign;
     }
-    resolve();
-  }, 0);
-});
+    verseAlign.push(a);
+  }
+  return alignmentsByVerse;
+}
+
+export function predictCorpus(map, corpus, alignment_data) {
+  const alignmentsByVerse = getAlignmentsByVerse(alignment_data);
+  for (const c of corpus) {
+    const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse);
+    console.log(suggestions);
+  }
+}
 
 /**
  * 
@@ -131,7 +145,7 @@ export async function initCorpus(map, baseFolder, bookId, chapterCount) {
             targetVerse,
             reference: {
               bookId,
-              chapter,
+              chapter: chapter + '',
               verse,
             }
           })
