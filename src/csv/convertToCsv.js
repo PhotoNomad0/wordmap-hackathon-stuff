@@ -4,6 +4,7 @@ const calculateFields = (sample) => {
   return baseFields.concat(additionalFields);
 };
 
+// Output: string representing a CSV file.
 export const convertToCsv = (stuffToConvert) => {
   const fields = calculateFields(stuffToConvert[0]);
 
