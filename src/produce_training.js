@@ -136,7 +136,7 @@ const numChapters = 6;
 const source = getBibleContent('./ugnt/eph', numChapters);
 const target = getBibleContent('./en/eph', numChapters);
 
-var total_collected_prodictions = [];
+var total_collected_predictions = [];
 
 for( var chapterNum = 0; chapterNum < numChapters; ++chapterNum ){
     const sourceChapterText = source[chapterNum+1];
@@ -151,9 +151,43 @@ for( var chapterNum = 0; chapterNum < numChapters; ++chapterNum ){
 
         const new_predictions = use_verse( reference, sourceVerseText, targetVerseText )
 
-        total_collected_prodictions = total_collected_prodictions.concat(new_predictions);
+        total_collected_predictions = total_collected_predictions.concat(new_predictions);
     }
 }
 
 //result:
-fs.writeFileSync( 'training_from_' + bookId + ".json", JSON.stringify(total_collected_prodictions) );
+fs.writeFileSync( 'training_from_' + bookId + ".json", JSON.stringify(total_collected_predictions) );
+
+//now produce csv content.
+var headers = [ "output", "source", "target", "f:sLang", "f:tLang" ];
+
+const scores = Object.keys(total_collected_predictions[0].scores);
+scores.forEach( (score, i) => {
+    if( score != "confidence" ){
+        headers.push( "f" + (i+1) + ":" + score );
+    }
+});
+
+var lines = [];
+lines.push( headers );
+
+
+total_collected_predictions.forEach( prediction => {
+    const line = [];
+    line.push( prediction.confidence );
+    line.push( prediction.alignment.sourceNgram.key );
+    line.push( prediction.alignment.targetNgram.key );
+    line.push( srcLang );
+    line.push( trgLang );
+
+    scores.forEach( score => {
+        if( score != "confidence" ){
+            line.push( prediction.scores[score] );
+        }
+    });
+
+    lines.push(line);
+});
+
+const csv_content = lines.map( e => e.join(",") ).join( "\n" );
+fs.writeFileSync( 'training_from_' + bookId + ".csv", csv_content );
