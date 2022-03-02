@@ -11,8 +11,11 @@ export const getPredictions = (map, sourceVerseText, targetVerseText) => new Pro
   setTimeout(() => {
     const suggestions = map.predict(sourceVerseText, targetVerseText);
 
-    if (suggestions[0]) {
-      resolve(suggestions[0].predictions);
+    // if (suggestions[0]) {
+    //   resolve(suggestions[0].predictions);
+    // }
+    if (suggestions) {
+      resolve(suggestions);
     }
     resolve();
   }, 0);
@@ -26,6 +29,9 @@ export const getPredictions = (map, sourceVerseText, targetVerseText) => new Pro
 export function initAlignmentMemory(map, alignment_data) {
   for (const a of alignment_data) {
     console.log(a);
-    map.appendAlignmentMemory(new Alignment(new Ngram(a.sourceNgram), new Ngram(a.targetNgram)));
+    const sourceNgram = new Ngram(a.sourceNgram);
+    const targetNgram = new Ngram(a.targetNgram);
+    const alignment = new Alignment(sourceNgram, targetNgram);
+    map.appendAlignmentMemory(alignment);
   }
 }

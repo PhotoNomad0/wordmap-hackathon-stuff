@@ -12,8 +12,8 @@ export default function App() {
     // load WordMap with alignment data
     initAlignmentMemory(map, alignment_data);
     
-    const sourceVerseText = 'ἀπόστολος';
-    const targetVerseText = 'apostle';
+    const sourceVerseText = 'Παῦλος, ἀπόστολος ( οὐκ ἀπ’ ἀνθρώπων, οὐδὲ δι’ ἀνθρώπου, ἀλλὰ διὰ Ἰησοῦ Χριστοῦ, καὶ Θεοῦ Πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν)';
+    const targetVerseText = 'Paul, an apostle—not from men nor by man, but through Jesus Christ and God the Father, the one who raised him from the dead';
     const prediction = await getPredictions(map, sourceVerseText, targetVerseText);
     setResults(JSON.stringify(prediction));
   }, [  ]);
