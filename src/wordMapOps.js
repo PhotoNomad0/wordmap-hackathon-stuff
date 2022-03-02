@@ -1,4 +1,9 @@
-import { Alignment, Ngram } from "wordmap";
+import WordMap, { Alignment, Ngram } from "wordmap";
+
+export function initWordMap() {
+  const opts = {targetNgramLength: 5, warnings: false};
+  return new WordMap(opts);
+}
 
 /**
  * Returns predictions based on the word map
@@ -27,11 +32,13 @@ export const getPredictions = (map, sourceVerseText, targetVerseText) => new Pro
  * @param {Array} alignment_data
  */
 export function initAlignmentMemory(map, alignment_data) {
-  for (const a of alignment_data) {
-    console.log(a);
-    const sourceNgram = new Ngram(a.sourceNgram);
-    const targetNgram = new Ngram(a.targetNgram);
-    const alignment = new Alignment(sourceNgram, targetNgram);
-    map.appendAlignmentMemory(alignment);
-  }
+  // for (const a of alignment_data) {
+  //   // console.log(a);
+  //   // const sourceNgram = new Ngram(a.sourceNgram);
+  //   // const targetNgram = new Ngram(a.targetNgram);
+  //   // const alignment = new Alignment(sourceNgram, targetNgram);
+  //   // map.appendAlignmentMemory(alignment);
+  //
+  // }
+  map.appendAlignmentMemory(alignment_data);
 }

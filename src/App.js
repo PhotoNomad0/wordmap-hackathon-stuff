@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import "./styles.css";
 import WordMap from "wordmap";
-import {getPredictions, initAlignmentMemory} from "./wordMapOps";
+import {getPredictions, initAlignmentMemory, initWordMap} from "./wordMapOps";
 const alignment_data = require("./resources/alignments_for_eph.json");
-const map = new WordMap({ targetNgramLength: 5, warnings: false });
+const map = initWordMap();
 
 export default function App() {
   const [results, setResults] = useState('');
