@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import "./styles.css";
 import WordMap from "wordmap";
 import {getPredictions, initAlignmentMemory, initCorpus, initWordMap} from "./wordMapOps";
+import Permutations from "./components/Permutations";
 const alignment_data = require("./resources/alignments_for_eph.json");
 const map = initWordMap();
 
@@ -24,6 +25,12 @@ return (
     <h1>WordMap Tuning</h1>
     <h2>Results:</h2>
     <div>{results}</div>
+    <h2>Permutations:</h2>
+    <Permutations
+      wordmap={wordmap}
+      sourceSentence={sourceVerseText}
+      targetSenetence={targetVerseText}
+    />
   </div>
 );
 }
