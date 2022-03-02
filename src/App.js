@@ -26,11 +26,11 @@ return (
     <h2>Results:</h2>
     <div>{results}</div>
     <h2>Permutations:</h2>
-    <Permutations
-      wordmap={wordmap}
-      sourceSentence={sourceVerseText}
-      targetSenetence={targetVerseText}
-    />
+    {/*<Permutations*/}
+    {/*  wordmap={wordmap}*/}
+    {/*  sourceSentence={sourceVerseText}*/}
+    {/*  targetSenetence={targetVerseText}*/}
+    {/*/>*/}
   </div>
 );
 }

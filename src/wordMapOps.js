@@ -1,5 +1,5 @@
 import WordMap, { Alignment, Ngram } from "wordmap";
-import {removeMarker, jsonToUSFM} from "usfm-js";
+import {removeMarker, toUSFM} from "usfm-js";
 
 export function initWordMap() {
   const opts = {targetNgramLength: 5, warnings: false};
@@ -67,9 +67,18 @@ async function getBibleContent(folder, chapterCount) {
       let verseData = verses[verse];
       let verseStr;
       if (typeof verseData !== 'string') {
-        verseStr = jsonToUSFM(verseData, {chunk: true});
+        const outputData = {
+          'chapters': {},
+          'headers': [],
+          'verses': { '1': verseData },
+        };
+        const usfm = toUSFM(outputData, {chunk: true});
+        const [, verseText ] = usfm.split('\\v 1');
+        verseStr = verseText || '';
+      } else {
+        verseStr = verseData;
       }
-      verseStr = removeMarker(verseStr);
+      verseStr = removeMarker(verseStr).trim().replaceAll('\n', ' ');
       targetChapter[verse] = verseStr;
     }
     target[chapter] = targetChapter;
@@ -78,6 +87,25 @@ async function getBibleContent(folder, chapterCount) {
 }
 
 export async function initCorpus(map) {
-  const target = await getTargetSource('./en/eph');
-  console.log(target);
+  const chapterCount = 6;
+  const target = await getBibleContent('./en/eph', chapterCount);
+  const source = await getBibleContent('./ugnt/eph', chapterCount);
+  for (let chapter = 1; chapter <= chapterCount; chapter++) {
+    const targetChapter = target[chapter];
+    const sourceChapter = source[chapter];
+    for (let verse of Object.keys(sourceChapter)) {
+      const verseNum = parseInt(verse);
+      if (isNaN(verseNum)) {
+        continue;
+      }
+      const sourceVerse = sourceChapter[verse];
+      const targetVerse = targetChapter[verse];
+      try {
+        map.appendCorpusString(sourceVerse, targetVerse);
+      } catch (e) {
+        console.log(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
+      }
+    }
+  }
+  console.log(target, source);
 }
