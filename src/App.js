@@ -1,35 +1,34 @@
 import {useEffect, useState} from "react";
 import "./styles.css";
 import WordMap from "wordmap";
-import {getPredictions, initAlignmentMemory, initWordMap} from "./wordMapOps";
+import {getPredictions, initAlignmentMemory, initCorpus, initWordMap} from "./wordMapOps";
 import Permutations from "./components/Permutations";
+import useAppState from "./hooks/useAppState";
 const alignment_data = require("./resources/alignments_for_eph.json");
-const map = initWordMap();
 
 export default function App() {
+  // const { state, actions, wordmap } = useAppState();
   const [results, setResults] = useState('');
+  const [wordMap, setWordMap] = useState(null);
 
   useEffect(async () => {
-    // load WordMap with alignment data
-    initAlignmentMemory(map, alignment_data);
-    
+    const chapterCount = 6;
+    const bookId = 'eph';
+    const { map, target, source, corpus } = await initWordMap(alignment_data, '.', bookId, chapterCount);
+
     const sourceVerseText = 'Παῦλος, ἀπόστολος ( οὐκ ἀπ’ ἀνθρώπων, οὐδὲ δι’ ἀνθρώπου, ἀλλὰ διὰ Ἰησοῦ Χριστοῦ, καὶ Θεοῦ Πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν)';
     const targetVerseText = 'Paul, an apostle—not from men nor by man, but through Jesus Christ and God the Father, the one who raised him from the dead';
     const prediction = await getPredictions(map, sourceVerseText, targetVerseText);
     setResults(JSON.stringify(prediction));
+    setWordMap(map);
   }, [  ]);
 
-return (
-  <div className="App">
-    <h1>WordMap Tuning</h1>
-    <h2>Results:</h2>
-    <div>{results}</div>
-    <h2>Permutations:</h2>
-    <Permutations
-      // wordmap={map}
-      // sourceSentence={sourceVerseText}
-      // targetSenetence={targetVerseText}
-    />
-  </div>
-);
-}
+  return (
+    <div className="App">
+      <h1>WordMap Tuning</h1>
+      <h2>Results:</h2>
+      <div>{results}</div>
+      <h2>Permutations:</h2>
+    </div>
+  );
+};
