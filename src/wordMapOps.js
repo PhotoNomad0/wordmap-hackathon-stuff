@@ -1,9 +1,14 @@
 import WordMap, { Alignment, Ngram } from "wordmap";
 import {removeMarker, toUSFM} from "usfm-js";
 
-export function initWordMap() {
+export async function initWordMap(alignment_data, corpusBaseFolder, corpusBookId, chapterCount = 0) {
   const opts = {targetNgramLength: 5, warnings: false};
-  return new WordMap(opts);
+  const map = new WordMap(opts);
+  if (alignment_data) {
+    initAlignmentMemory(map, alignment_data);
+  }
+  const {target, source, corpus} = await initCorpus(map, corpusBaseFolder, corpusBookId, chapterCount);
+  return {map, target, source, corpus};
 }
 
 /**
@@ -16,10 +21,7 @@ export function initWordMap() {
 export const getPredictions = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
   setTimeout(() => {
     const suggestions = map.predict(sourceVerseText, targetVerseText);
-
-    // if (suggestions[0]) {
-    //   resolve(suggestions[0].predictions);
-    // }
+    
     if (suggestions) {
       resolve(suggestions);
     }
@@ -28,19 +30,54 @@ export const getPredictions = (map, sourceVerseText, targetVerseText) => new Pro
 });
 
 /**
+ * Returns prediction suggestions based on the word map
+ * @param {WordMap} map
+ * @param sourceVerseText
+ * @param targetVerseText
+ * @return {Promise<*>}
+ */
+export function getSuggestions(map, sourceVerseText, targetVerseText) {
+  const suggestions = map.predict(sourceVerseText, targetVerseText);
+
+  if (suggestions[0]) {
+    return suggestions[0].predictions;
+  }
+  return null;
+}
+
+export function getAlignmentsByVerse(alignment_data) {
+  const alignmentsByVerse = {};
+  for (const a of alignment_data) {
+    const reference = a.reference;
+    let chapterAlign = alignmentsByVerse[reference.chapter];
+    if (!chapterAlign) {
+      chapterAlign = {};
+      alignmentsByVerse[reference.chapter] = chapterAlign;
+    }
+    let verseAlign = chapterAlign[reference.verse];
+    if (!verseAlign) {
+      verseAlign = [];
+      chapterAlign[reference.verse] = verseAlign;
+    }
+    verseAlign.push(a);
+  }
+  return alignmentsByVerse;
+}
+
+export function predictCorpus(map, corpus, alignment_data) {
+  const alignmentsByVerse = getAlignmentsByVerse(alignment_data);
+  for (const c of corpus) {
+    const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse);
+    console.log(suggestions);
+  }
+}
+
+/**
  * 
  * @param {WordMap} map
  * @param {Array} alignment_data
  */
 export function initAlignmentMemory(map, alignment_data) {
-  // for (const a of alignment_data) {
-  //   // console.log(a);
-  //   // const sourceNgram = new Ngram(a.sourceNgram);
-  //   // const targetNgram = new Ngram(a.targetNgram);
-  //   // const alignment = new Alignment(sourceNgram, targetNgram);
-  //   // map.appendAlignmentMemory(alignment);
-  //
-  // }
   map.appendAlignmentMemory(alignment_data);
 }
 
@@ -48,10 +85,10 @@ async function getJsonFile(filePath) {
   try {
     const response = await fetch(filePath);
     const jsonData = await response.json();
-    console.log(jsonData);
+    // console.log(jsonData);
     return jsonData;
   } catch (e) {
-    console.log(`error reading ${filePath}:`, e);
+    console.error(`error reading ${filePath}:`, e);
   }
   return null;
 }
@@ -86,26 +123,38 @@ async function getBibleContent(folder, chapterCount) {
   return target;
 }
 
-export async function initCorpus(map) {
-  const chapterCount = 6;
-  const target = await getBibleContent('./en/eph', chapterCount);
-  const source = await getBibleContent('./ugnt/eph', chapterCount);
-  for (let chapter = 1; chapter <= chapterCount; chapter++) {
-    const targetChapter = target[chapter];
-    const sourceChapter = source[chapter];
-    for (let verse of Object.keys(sourceChapter)) {
-      const verseNum = parseInt(verse);
-      if (isNaN(verseNum)) {
-        continue;
-      }
-      const sourceVerse = sourceChapter[verse];
-      const targetVerse = targetChapter[verse];
-      try {
-        map.appendCorpusString(sourceVerse, targetVerse);
-      } catch (e) {
-        console.log(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
+export async function initCorpus(map, baseFolder, bookId, chapterCount) {
+  if (baseFolder) {
+    const corpus = [];
+    const target = await getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
+    const source = await getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
+    for (let chapter = 1; chapter <= chapterCount; chapter++) {
+      const targetChapter = target[chapter];
+      const sourceChapter = source[chapter];
+      for (let verse of Object.keys(sourceChapter)) {
+        const verseNum = parseInt(verse);
+        if (isNaN(verseNum)) {
+          continue;
+        }
+        const sourceVerse = sourceChapter[verse];
+        const targetVerse = targetChapter[verse];
+        try {
+          map.appendCorpusString(sourceVerse, targetVerse);
+          corpus.push({
+            sourceVerse,
+            targetVerse,
+            reference: {
+              bookId,
+              chapter: chapter + '',
+              verse,
+            }
+          })
+        } catch (e) {
+          console.error(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
+        }
       }
     }
+    return {target, source, corpus};
   }
-  console.log(target, source);
+  return {};
 }
