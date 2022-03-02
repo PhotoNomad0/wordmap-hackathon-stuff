@@ -1,4 +1,5 @@
 import WordMap, { Alignment, Ngram } from "wordmap";
+import {removeMarker, jsonToUSFM} from "usfm-js";
 
 export function initWordMap() {
   const opts = {targetNgramLength: 5, warnings: false};
@@ -41,4 +42,42 @@ export function initAlignmentMemory(map, alignment_data) {
   //
   // }
   map.appendAlignmentMemory(alignment_data);
+}
+
+async function getJsonFile(filePath) {
+  try {
+    const response = await fetch(filePath);
+    const jsonData = await response.json();
+    console.log(jsonData);
+    return jsonData;
+  } catch (e) {
+    console.log(`error reading ${filePath}:`, e);
+  }
+  return null;
+}
+
+async function getBibleContent(folder, chapterCount) {
+  const target = {};
+  for (let chapter = 1; chapter <= chapterCount; chapter++) {
+    const targetChapter = {};
+    const targetChapterPath = `${folder}/${chapter}.json`;
+    const verses = await getJsonFile(targetChapterPath);
+
+    for (const verse of Object.keys(verses)) {
+      let verseData = verses[verse];
+      let verseStr;
+      if (typeof verseData !== 'string') {
+        verseStr = jsonToUSFM(verseData, {chunk: true});
+      }
+      verseStr = removeMarker(verseStr);
+      targetChapter[verse] = verseStr;
+    }
+    target[chapter] = targetChapter;
+  }
+  return target;
+}
+
+export async function initCorpus(map) {
+  const target = await getTargetSource('./en/eph');
+  console.log(target);
 }
