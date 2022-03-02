@@ -26,9 +26,9 @@ return (
     <div>{results}</div>
     <h2>Permutations:</h2>
     <Permutations
-      wordmap={wordmap}
-      sourceSentence={sourceVerseText}
-      targetSenetence={targetVerseText}
+      // wordmap={map}
+      // sourceSentence={sourceVerseText}
+      // targetSenetence={targetVerseText}
     />
   </div>
 );
