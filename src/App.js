@@ -12,7 +12,7 @@ export default function App() {
   useEffect(async () => {
     const chapterCount = 6;
     const bookId = 'eph';
-    const { map } = await initWordMap(alignment_data, '.', bookId, chapterCount);
+    const { map, target, source, corpus } = await initWordMap(alignment_data, '.', bookId, chapterCount);
 
     const sourceVerseText = 'Παῦλος, ἀπόστολος ( οὐκ ἀπ’ ἀνθρώπων, οὐδὲ δι’ ἀνθρώπου, ἀλλὰ διὰ Ἰησοῦ Χριστοῦ, καὶ Θεοῦ Πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν)';
     const targetVerseText = 'Paul, an apostle—not from men nor by man, but through Jesus Christ and God the Father, the one who raised him from the dead';

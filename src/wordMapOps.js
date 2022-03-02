@@ -7,8 +7,8 @@ export async function initWordMap(alignment_data, corpusBaseFolder, corpusBookId
   if (alignment_data) {
     initAlignmentMemory(map, alignment_data);
   }
-  const {target, source} = await initCorpus(map, corpusBaseFolder, corpusBookId, chapterCount);
-  return {map, target, source};
+  const {target, source, corpus} = await initCorpus(map, corpusBaseFolder, corpusBookId, chapterCount);
+  return {map, target, source, corpus};
 }
 
 /**
@@ -21,12 +21,38 @@ export async function initWordMap(alignment_data, corpusBaseFolder, corpusBookId
 export const getPredictions = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
   setTimeout(() => {
     const suggestions = map.predict(sourceVerseText, targetVerseText);
-
-    // if (suggestions[0]) {
-    //   resolve(suggestions[0].predictions);
-    // }
+    
     if (suggestions) {
       resolve(suggestions);
+    }
+    resolve();
+  }, 0);
+});
+
+/**
+ * Returns prediction suggestions based on the word map
+ * @param {WordMap} map
+ * @param sourceVerseText
+ * @param targetVerseText
+ * @return {Promise<*>}
+ */
+export const getSuggestions = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
+  setTimeout(() => {
+    const suggestions = map.predict(sourceVerseText, targetVerseText);
+
+    if (suggestions[0]) {
+      resolve(suggestions[0].predictions);
+    }
+    resolve();
+  }, 0);
+});
+
+export const predictCorpus = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
+  setTimeout(() => {
+    const suggestions = map.predict(sourceVerseText, targetVerseText);
+
+    if (suggestions[0]) {
+      resolve(suggestions[0].predictions);
     }
     resolve();
   }, 0);
