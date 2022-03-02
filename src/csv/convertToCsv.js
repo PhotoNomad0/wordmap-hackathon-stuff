@@ -1,3 +1,4 @@
+// Output: List of fields used to generate CSV.
 const calculateFields = (sample) => {
   const baseFields = ["output", "source", "target"];
   const additionalFields = Object.keys(sample).filter((key) =>
@@ -6,7 +7,7 @@ const calculateFields = (sample) => {
   return baseFields.concat(additionalFields);
 };
 
-// Output: string representing a CSV file.
+// Output: array of strings for each csv row.
 export const convertToCsvRows = (stuffToConvert) => {
   const fields = calculateFields(stuffToConvert[0]);
 
@@ -25,9 +26,11 @@ export const convertToCsvRows = (stuffToConvert) => {
   return [].concat(header, tabularized);
 };
 
+// Input: array of flat objects adhering to our agreed upon fields.
+// Output: string representing a csv file.
 export const convertToCsv = (stuffToConvert) => {
   const csvRows = convertToCsvRows(stuffToConvert);
-  return csvRows.join('\n');
+  return csvRows.join("\n");
 };
 
 export default convertToCsv;
