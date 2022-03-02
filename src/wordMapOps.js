@@ -1,13 +1,13 @@
 import WordMap, { Alignment, Ngram } from "wordmap";
 import {removeMarker, toUSFM} from "usfm-js";
 
-export async function initWordMap(alignment_data, baseFolder, bookId, chapterCount) {
+export async function initWordMap(alignment_data, corpusBaseFolder, corpusBookId, chapterCount = 0) {
   const opts = {targetNgramLength: 5, warnings: false};
   const map = new WordMap(opts);
   if (alignment_data) {
     initAlignmentMemory(map, alignment_data);
   }
-  const {target, source} = await initCorpus(map, baseFolder, bookId, chapterCount);
+  const {target, source} = await initCorpus(map, corpusBaseFolder, corpusBookId, chapterCount);
   return {map, target, source};
 }
 
@@ -84,34 +84,37 @@ async function getBibleContent(folder, chapterCount) {
 }
 
 export async function initCorpus(map, baseFolder, bookId, chapterCount) {
-  const corpus = [];
-  const target = await getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
-  const source = await getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
-  for (let chapter = 1; chapter <= chapterCount; chapter++) {
-    const targetChapter = target[chapter];
-    const sourceChapter = source[chapter];
-    for (let verse of Object.keys(sourceChapter)) {
-      const verseNum = parseInt(verse);
-      if (isNaN(verseNum)) {
-        continue;
-      }
-      const sourceVerse = sourceChapter[verse];
-      const targetVerse = targetChapter[verse];
-      try {
-        map.appendCorpusString(sourceVerse, targetVerse);
-        corpus.push({
-          sourceVerse,
-          targetVerse,
-          reference: {
-            bookId,
-            chapter,
-            verse,
-          }
-        })
-      } catch (e) {
-        console.error(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
+  if (baseFolder) {
+    const corpus = [];
+    const target = await getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
+    const source = await getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
+    for (let chapter = 1; chapter <= chapterCount; chapter++) {
+      const targetChapter = target[chapter];
+      const sourceChapter = source[chapter];
+      for (let verse of Object.keys(sourceChapter)) {
+        const verseNum = parseInt(verse);
+        if (isNaN(verseNum)) {
+          continue;
+        }
+        const sourceVerse = sourceChapter[verse];
+        const targetVerse = targetChapter[verse];
+        try {
+          map.appendCorpusString(sourceVerse, targetVerse);
+          corpus.push({
+            sourceVerse,
+            targetVerse,
+            reference: {
+              bookId,
+              chapter,
+              verse,
+            }
+          })
+        } catch (e) {
+          console.error(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
+        }
       }
     }
+    return {target, source, corpus};
   }
-  return {target, source, corpus};
+  return {};
 }
