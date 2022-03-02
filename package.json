@@ -1,0 +1,13 @@
+{
+  "name": "LR-js",
+  "version": "0.1.0",
+  "description": "WordMap Tuning",
+  "main": "index.js",
+  "repository": "https://github.com/PhotoNomad0/LR-js.git",
+  "author": "blm <mcleanb@photo-nomad.net>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "wordmap": "^0.8.2"
+  }
+}
