@@ -183,7 +183,7 @@ for( var chapterNum = 0; chapterNum < numChapters; ++chapterNum ){
 
 
 //result:
-fs.writeFileSync( 'training_from_' + bookId + ".json", JSON.stringify(total_collected_predictions) );
+//fs.writeFileSync( 'training_from_' + bookId + ".json", JSON.stringify(total_collected_predictions) );
 
 //now produce csv content.
 var headers = [ "output", "source", "target", "f:sLang", "f:tLang" ];
@@ -195,26 +195,39 @@ scores.forEach( (score, i) => {
     }
 });
 
+
+var json_rebuilds = [];
 var lines = [];
 lines.push( headers );
 
 
 total_collected_predictions.forEach( prediction => {
+    const json_rebuild = {};
     const line = [];
     line.push( prediction.confidence );
     line.push( prediction.alignment.sourceNgram.key );
     line.push( prediction.alignment.targetNgram.key );
     line.push( srcLang );
     line.push( trgLang );
+    json_rebuild[ "output" ] = prediction.confidence;
+    json_rebuild[ "source" ] = prediction.alignment.sourceNgram.key;
+    json_rebuild[ "target" ] = prediction.alignment.targetNgram.key;
+    json_rebuild[ "f:sLang" ] = srcLang;
+    json_rebuild[ "f:tLang" ] = trgLang;
 
-    scores.forEach( score => {
+    scores.forEach( (score,i) => {
         if( score != "confidence" ){
             line.push( prediction.scores[score] );
+            json_rebuild[ "f" + (i+1) + ":" + score ] =  prediction.scores[score];
         }
     });
 
     lines.push(line);
+    json_rebuilds.push(json_rebuild);
 });
 
 const csv_content = lines.map( e => e.join(",") ).join( "\n" );
 fs.writeFileSync( 'training_from_' + bookId + ".csv", csv_content );
+
+
+fs.writeFileSync( 'training_from_' + bookId + ".json", JSON.stringify(json_rebuilds) );
