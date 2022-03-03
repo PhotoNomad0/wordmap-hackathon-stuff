@@ -109,6 +109,13 @@ function compareSourceNgrams(a, b) {
   return same;
 }
 
+function compareTargetNgrams(a, b) {
+  const aNgrams = getNgramTokens(a);
+  const bNgrams = getNgramTokens(b);
+  const same = compareTokens(aNgrams.targetNgram, bNgrams.targetNgram);
+  return same;
+}
+
 /**
  * suggestion?.predictedAlignment?.sourceNgram?.tokens?.tokenOccurrence
  */
@@ -121,6 +128,12 @@ function sameAlignment(alignment, suggestion) {
 function sameSource(alignment, suggestion) {
   const suggestedAlignment = suggestion?.predictedAlignment;
   const same = compareSourceNgrams(alignment, suggestedAlignment);
+  return same;
+}
+
+function sameTarget(alignment, suggestion) {
+  const suggestedAlignment = suggestion?.predictedAlignment;
+  const same = compareTargetNgrams(alignment, suggestedAlignment);
   return same;
 }
 
@@ -143,6 +156,18 @@ function partialSourceMatch(alignment, suggestion) {
   return false;
 }
 
+function partialTargetMatch(alignment, suggestion) {
+  const suggestedAlignment = suggestion?.predictedAlignment;
+  const aNgrams = getNgramTokens(alignment);
+  const bNgrams = getNgramTokens(suggestedAlignment);
+  for (let token of aNgrams.targetNgram) {
+    let match = containsToken(token, bNgrams.targetNgram);
+    if (match) {
+      return match;
+    }
+  }
+  return false;
+}
 
 function tokensToString(nGram) {
   let output = '';
@@ -162,6 +187,12 @@ function alignmentsToString(alignment) {
 function targetToString(alignment) {
   const {sourceNgram, targetNgram} = getNgramTokens(alignment);
   let output = `targetNgram=${tokensToString(targetNgram)}`;
+  return output;
+}
+
+function sourceToString(alignment) {
+  const {sourceNgram, targetNgram} = getNgramTokens(alignment);
+  let output = `targetNgram=${tokensToString(sourceNgram)}`;
   return output;
 }
 
@@ -190,7 +221,8 @@ export function predictCorpus(map, corpus, alignment_data) {
         notMatchedAlignment.push({...alignment, index: i});
       }
     }
-    
+
+    // do partial source match
     for (let i = 0; i < notMatchedAlignment.length; i++) {
       const alignment = notMatchedAlignment[i];
       let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameSource(alignment, suggestion)));
@@ -203,6 +235,30 @@ export function predictCorpus(map, corpus, alignment_data) {
         i--;
       } else {
         matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialSourceMatch(alignment, suggestion)));
+        if (matchIndex >= 0) {
+          const suggestion = notMatchedSuggestion[matchIndex];
+          console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
+          console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
+          notMatchedAlignment.splice(i, 1);
+          notMatchedSuggestion.splice(matchIndex, 1);
+          i--;
+        }
+      }
+    }
+    
+    // do partial target match
+    for (let i = 0; i < notMatchedAlignment.length; i++) {
+      const alignment = notMatchedAlignment[i];
+      let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameTarget(alignment, suggestion)));
+      if (matchIndex >= 0) {
+        const suggestion = notMatchedSuggestion[matchIndex];
+        console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
+        console.log(`   has different suggestion:`, sourceToString(suggestion?.predictedAlignment));
+        notMatchedAlignment.splice(i, 1);
+        notMatchedSuggestion.splice(matchIndex, 1);
+        i--;
+      } else {
+        matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialTargetMatch(alignment, suggestion)));
         if (matchIndex >= 0) {
           const suggestion = notMatchedSuggestion[matchIndex];
           console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
