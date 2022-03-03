@@ -9,8 +9,8 @@ const opts = {targetNgramLength: 3, warnings: false};
 const wordmap = new WordMap.default(opts);
 
 
-//const MISS_INCLUSION = 1.1; //100%
-const MISS_INCLUSION = .2; //20%
+const MISS_INCLUSION = 1.1; //100%
+//const MISS_INCLUSION = .2; //20%
 
 function getJsonFile( path ){
     return require( "../public/" + path );
@@ -99,7 +99,8 @@ function use_verse( reference, sourceVerseText, targetVerseText ){
     let sourceTokens = Lexer.default.tokenize(sourceVerseText);
     let targetTokens = Lexer.default.tokenize(targetVerseText);
 
-    const predictions = wordmap.engine.run(sourceTokens,targetTokens);
+    const runOutput = wordmap.engine.run(sourceTokens,targetTokens);
+    const predictions = wordmap.engine.score(runOutput);
 
 
     const collected_predictions = [];
