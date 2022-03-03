@@ -1,3 +1,4 @@
+import isEqual from 'deep-equal';
 import WordMap, { Alignment, Ngram } from "wordmap";
 import {removeMarker, toUSFM} from "usfm-js";
 
@@ -64,10 +65,98 @@ export function getAlignmentsByVerse(alignment_data) {
   return alignmentsByVerse;
 }
 
+function getTokensFromNgram(nGram) {
+  const tokens = [];
+  if (nGram?.tokens) { // if tokens array, use it
+    nGram = nGram?.tokens;
+  }
+  const len = nGram?.length || 0;
+  for (let i = 0; i < len; i++) {
+    const { text, occurrence, tokenOccurrence } = nGram[i];
+    tokens.push({
+      text,
+      occurrence: tokenOccurrence ?? occurrence,
+    })
+  }
+  return tokens;
+}
+
+function getNgramTokens(alignment) {
+  const {sourceNgram, targetNgram} = alignment || {};
+  return {
+    sourceNgram: getTokensFromNgram(sourceNgram),
+    targetNgram: getTokensFromNgram(targetNgram),
+  }
+}
+
+function compareTokens(a, b) {
+  const same = isEqual(a, b);
+  return same;
+}
+
+function compareNgrams(a, b) {
+  const aNgrams = getNgramTokens(a);
+  const bNgrams = getNgramTokens(b);
+  const same = compareTokens(aNgrams.sourceNgram, bNgrams.sourceNgram) &&
+    compareTokens(aNgrams.targetNgram, bNgrams.targetNgram);
+  return same;
+}
+
+/**
+ * suggestion?.predictedAlignment?.sourceNgram?.tokens?.tokenOccurrence
+ */
+function sameAlignment(alignment, suggestion) {
+  const suggestedAlignment = suggestion?.predictedAlignment;
+  const same = compareNgrams(alignment, suggestedAlignment);
+  return same;
+}
+
+function tokensToString(nGram) {
+  let output = '';
+  for (let token of nGram) {
+    output += `${token.text}:${token.occurrence},`;
+  }
+  return output;
+}
+
+function alignmentsToString(alignment) {
+  const {sourceNgram, targetNgram} = getNgramTokens(alignment);
+  let output = `sourceNgram=${tokensToString(sourceNgram)}  `;
+  output += `targetNgram=${tokensToString(targetNgram)}`;
+  return output;
+}
+
 export function predictCorpus(map, corpus, alignment_data) {
   const alignmentsByVerse = getAlignmentsByVerse(alignment_data);
+  let mismatch = 0;
+  let corpusCount = -1;
   for (const c of corpus) {
-    const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse);
+    corpusCount++;
+    console.log(`${corpusCount} - corpus`, JSON.stringify(c));
+    const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse) || [];
+    const alignments = alignmentsByVerse?.[c.reference.chapter]?.[c.reference.verse] || [];
+    let notSameLen = suggestions.length !== alignments.length;
+    let notMatched = [...suggestions];
+    let suggestionMisCount = 0;
+    for (let i = 0; i < alignments.length; i++) {
+      const alignment = alignments[i];
+      const matchIndex = notMatched.findIndex(suggestion => (sameAlignment(alignment, suggestion)));
+      if (matchIndex >= 0) {
+        notMatched.splice(matchIndex,1); // remove match
+      } else {
+        mismatch++;
+        console.log(`c${corpusCount} - alignment ${i} not matched`, alignmentsToString(alignment));
+      }
+    }
+    const notMatchedLen = notMatched.length;
+    if (notMatchedLen) {
+      for (let i = 0; i < notMatchedLen; i++) {
+        const suggestion = notMatched[i];
+        console.log(`c${corpusCount} - suggestion mismatch ${++suggestionMisCount}`, alignmentsToString(suggestion?.predictedAlignment));
+      }
+    }
+    mismatch += notMatchedLen;
+
     console.log(suggestions);
   }
 }
