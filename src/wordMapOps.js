@@ -196,7 +196,7 @@ function sourceToString(alignment) {
   return output;
 }
 
-export function predictCorpus(map, corpus, alignment_data) {
+export function predictCorpus(map, corpus, alignment_data, verbose = false) {
   const alignmentsByVerse = getAlignmentsByVerse(alignment_data);
   let totalMismatches = 0;
   let partialMatches = 0;
@@ -205,12 +205,12 @@ export function predictCorpus(map, corpus, alignment_data) {
   let correctMatches = 0;
   for (const c of corpus) {
     totalCorpus++;
-    console.log(`${totalCorpus} - corpus`, JSON.stringify(c));
+    verbose && console.log(`${totalCorpus} - corpus`, JSON.stringify(c));
     const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse) || [];
     const alignments = alignmentsByVerse?.[c.reference.chapter]?.[c.reference.verse] || [];
     let notMatchedSuggestion = [...suggestions];
-    console.log(`alignments.length: ${alignments.length}`);
-    console.log(`suggestions.length: ${suggestions.length}`);
+    verbose && console.log(`alignments.length: ${alignments.length}`);
+    verbose && console.log(`suggestions.length: ${suggestions.length}`);
     let suggestionMisCount = 0;
     let notMatchedAlignment = [];
     for (let i = 0; i < alignments.length; i++) {
@@ -221,7 +221,6 @@ export function predictCorpus(map, corpus, alignment_data) {
         notMatchedSuggestion.splice(matchIndex,1); // remove match
         correctMatches++;
       } else {
-        // console.log(`c${corpusCount} - alignment ${i} not matched`, alignmentsToString(alignment));
         notMatchedAlignment.push({...alignment, index: i});
       }
     }
@@ -232,8 +231,8 @@ export function predictCorpus(map, corpus, alignment_data) {
       let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameSource(alignment, suggestion)));
       if (matchIndex >= 0) {
         const suggestion = notMatchedSuggestion[matchIndex];
-        console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-        console.log(`   has different suggestion:`, targetToString(suggestion?.predictedAlignment));
+        verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
+        verbose && console.log(`   has different suggestion:`, targetToString(suggestion?.predictedAlignment));
         notMatchedAlignment.splice(i, 1);
         notMatchedSuggestion.splice(matchIndex, 1);
         i--;
@@ -243,8 +242,8 @@ export function predictCorpus(map, corpus, alignment_data) {
         matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialSourceMatch(alignment, suggestion)));
         if (matchIndex >= 0) {
           const suggestion = notMatchedSuggestion[matchIndex];
-          console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-          console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
+          verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
+          verbose && console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
           notMatchedAlignment.splice(i, 1);
           notMatchedSuggestion.splice(matchIndex, 1);
           i--;
@@ -260,8 +259,8 @@ export function predictCorpus(map, corpus, alignment_data) {
       let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameTarget(alignment, suggestion)));
       if (matchIndex >= 0) {
         const suggestion = notMatchedSuggestion[matchIndex];
-        console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-        console.log(`   has different suggestion:`, sourceToString(suggestion?.predictedAlignment));
+        verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
+        verbose && console.log(`   has different suggestion:`, sourceToString(suggestion?.predictedAlignment));
         notMatchedAlignment.splice(i, 1);
         notMatchedSuggestion.splice(matchIndex, 1);
         i--;
@@ -271,8 +270,8 @@ export function predictCorpus(map, corpus, alignment_data) {
         matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialTargetMatch(alignment, suggestion)));
         if (matchIndex >= 0) {
           const suggestion = notMatchedSuggestion[matchIndex];
-          console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-          console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
+          verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
+          verbose && console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
           notMatchedAlignment.splice(i, 1);
           notMatchedSuggestion.splice(matchIndex, 1);
           i--;
@@ -283,20 +282,21 @@ export function predictCorpus(map, corpus, alignment_data) {
     }
 
     for (let alignment of notMatchedAlignment) {
-      console.log(`c${totalCorpus} - alignment ${alignment.index} not matched`, alignmentsToString(alignment));
+      verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} not matched`, alignmentsToString(alignment));
     }
     
     const notMatchedSuggestionLen = notMatchedSuggestion.length;
     if (notMatchedSuggestionLen) {
       for (let i = 0; i < notMatchedSuggestionLen; i++) {
         const suggestion = notMatchedSuggestion[i];
-        console.log(`c${totalCorpus} - suggestion mismatch ${++suggestionMisCount}`, alignmentsToString(suggestion?.predictedAlignment));
+        verbose && console.log(`c${totalCorpus} - suggestion mismatch ${++suggestionMisCount}`, alignmentsToString(suggestion?.predictedAlignment));
       }
     }
 
     totalMismatches += notMatchedSuggestionLen + notMatchedAlignment.length;
   }
-  console.log({verseCount: totalCorpus, totalMismatches, partialMatches, totalAlignments, correctMatches});
+  const results = {verseCount: totalCorpus, totalMismatches, partialMatches, totalAlignments, correctMatches};
+  return results;
 }
 
 /**
@@ -350,37 +350,50 @@ async function getBibleContent(folder, chapterCount) {
   return target;
 }
 
-export async function initCorpus(map, baseFolder, bookId, chapterCount) {
-  if (baseFolder) {
-    const corpus = [];
-    const target = await getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
-    const source = await getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
-    for (let chapter = 1; chapter <= chapterCount; chapter++) {
-      const targetChapter = target[chapter];
-      const sourceChapter = source[chapter];
-      for (let verse of Object.keys(sourceChapter)) {
-        const verseNum = parseInt(verse);
-        if (isNaN(verseNum)) {
-          continue;
-        }
-        const sourceVerse = sourceChapter[verse];
-        const targetVerse = targetChapter[verse];
-        try {
-          map.appendCorpusString(sourceVerse, targetVerse);
-          corpus.push({
-            sourceVerse,
-            targetVerse,
-            reference: {
-              bookId,
-              chapter: chapter + '',
-              verse,
-            }
-          })
-        } catch (e) {
-          console.error(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
-        }
+export function initCorpusFromTargetAndSource(chapterCount, target, source, map, bookId) {
+  const corpus = [];
+  for (let chapter = 1; chapter <= chapterCount; chapter++) {
+    const targetChapter = target[chapter];
+    const sourceChapter = source[chapter];
+    for (let verse of Object.keys(sourceChapter)) {
+      const verseNum = parseInt(verse);
+      if (isNaN(verseNum)) {
+        continue;
+      }
+      const sourceVerse = sourceChapter[verse];
+      const targetVerse = targetChapter[verse];
+      try {
+        map.appendCorpusString(sourceVerse, targetVerse);
+        corpus.push({
+          sourceVerse,
+          targetVerse,
+          reference: {
+            bookId,
+            chapter: chapter + '',
+            verse,
+          }
+        })
+      } catch (e) {
+        console.error(`error adding corpus ${chapter}:${verse}:\n${sourceVerse}\n${targetVerse}`, e);
       }
     }
+  }
+  return corpus;
+}
+
+export async function loadTargetAndSource(baseFolder, bookId, chapterCount) {
+  if (baseFolder) {
+    const target = await getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
+    const source = await getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
+    return {target, source};
+  }
+  return {};
+}
+
+export async function initCorpus(map, baseFolder, bookId, chapterCount) {
+  if (baseFolder) {
+    const {target, source} = await loadTargetAndSource(baseFolder, bookId, chapterCount);
+    const corpus = initCorpusFromTargetAndSource(chapterCount, target, source, map, bookId);
     return {target, source, corpus};
   }
   return {};

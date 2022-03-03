@@ -3,6 +3,7 @@ import "./styles.css";
 import WordMap from "wordmap";
 import {getPredictions, initAlignmentMemory, initCorpus, initWordMap, predictCorpus} from "./wordMapOps";
 import Permutations from "./components/Permutations";
+import {doWordMapIterations} from "./iterateWordMap";
 const alignment_data = require("./resources/alignments_for_eph.json");
 
 export default function App() {
@@ -10,16 +11,7 @@ export default function App() {
   const [wordMap, setWordMap] = useState(null);
 
   useEffect(async () => {
-    const chapterCount = 6;
-    const bookId = 'eph';
-    const { map, target, source, corpus } = await initWordMap(alignment_data, '.', bookId, chapterCount);
-    predictCorpus(map, corpus, alignment_data);
-    
-    const sourceVerseText = 'Παῦλος, ἀπόστολος ( οὐκ ἀπ’ ἀνθρώπων, οὐδὲ δι’ ἀνθρώπου, ἀλλὰ διὰ Ἰησοῦ Χριστοῦ, καὶ Θεοῦ Πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν)';
-    const targetVerseText = 'Paul, an apostle—not from men nor by man, but through Jesus Christ and God the Father, the one who raised him from the dead';
-    const prediction = await getPredictions(map, sourceVerseText, targetVerseText);
-    setResults(JSON.stringify(prediction));
-    setWordMap(map);
+    doWordMapIterations();
   }, [  ]);
 
 return (
