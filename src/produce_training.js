@@ -202,23 +202,26 @@ lines.push( headers );
 
 
 total_collected_predictions.forEach( prediction => {
-    const json_rebuild = {};
+    const json_rebuild_input = {};
+    const json_rebuild_output = {};
+    const json_rebuild = { "input": json_rebuild_input,
+                           "output": json_rebuild_output };
     const line = [];
     line.push( prediction.confidence );
     line.push( prediction.alignment.sourceNgram.key );
     line.push( prediction.alignment.targetNgram.key );
     line.push( srcLang );
     line.push( trgLang );
-    json_rebuild[ "output" ] = prediction.confidence;
-    json_rebuild[ "source" ] = prediction.alignment.sourceNgram.key;
-    json_rebuild[ "target" ] = prediction.alignment.targetNgram.key;
-    json_rebuild[ "f:sLang" ] = srcLang;
-    json_rebuild[ "f:tLang" ] = trgLang;
+    json_rebuild_output[ "confidence" ] = prediction.confidence;
+    json_rebuild_input[ "source" ] = prediction.alignment.sourceNgram.key;
+    json_rebuild_input[ "target" ] = prediction.alignment.targetNgram.key;
+    json_rebuild_input[ "f:sLang" ] = srcLang;
+    json_rebuild_input[ "f:tLang" ] = trgLang;
 
     scores.forEach( (score,i) => {
         if( score != "confidence" ){
             line.push( prediction.scores[score] );
-            json_rebuild[ "f" + (i+1) + ":" + score ] =  prediction.scores[score];
+            json_rebuild_input[ "f" + (i+1) + ":" + score ] =  prediction.scores[score];
         }
     });
 
