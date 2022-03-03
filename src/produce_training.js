@@ -204,8 +204,10 @@ lines.push( headers );
 total_collected_predictions.forEach( prediction => {
     const json_rebuild_input = {};
     const json_rebuild_output = {};
+    const json_other_info = {};
     const json_rebuild = { "input": json_rebuild_input,
-                           "output": json_rebuild_output };
+                           "output": json_rebuild_output,
+                           "misc": json_other_info };
     const line = [];
     line.push( prediction.confidence );
     line.push( prediction.alignment.sourceNgram.key );
@@ -213,10 +215,10 @@ total_collected_predictions.forEach( prediction => {
     line.push( srcLang );
     line.push( trgLang );
     json_rebuild_output[ "confidence" ] = prediction.confidence;
-    json_rebuild_input[ "source" ] = prediction.alignment.sourceNgram.key;
-    json_rebuild_input[ "target" ] = prediction.alignment.targetNgram.key;
-    json_rebuild_input[ "f:sLang" ] = srcLang;
-    json_rebuild_input[ "f:tLang" ] = trgLang;
+    json_other_info[ "source" ] = prediction.alignment.sourceNgram.key;
+    json_other_info[ "target" ] = prediction.alignment.targetNgram.key;
+    json_other_info[ "f:sLang" ] = srcLang;
+    json_other_info[ "f:tLang" ] = trgLang;
 
     scores.forEach( (score,i) => {
         if( score != "confidence" ){
