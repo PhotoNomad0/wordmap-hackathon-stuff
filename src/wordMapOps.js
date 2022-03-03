@@ -198,11 +198,14 @@ function sourceToString(alignment) {
 
 export function predictCorpus(map, corpus, alignment_data) {
   const alignmentsByVerse = getAlignmentsByVerse(alignment_data);
-  let mismatch = 0;
-  let corpusCount = -1;
+  let totalMismatches = 0;
+  let partialMatches = 0;
+  let totalCorpus = -1;
+  let totalAlignments = -1;
+  let correctMatches = 0;
   for (const c of corpus) {
-    corpusCount++;
-    console.log(`${corpusCount} - corpus`, JSON.stringify(c));
+    totalCorpus++;
+    console.log(`${totalCorpus} - corpus`, JSON.stringify(c));
     const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse) || [];
     const alignments = alignmentsByVerse?.[c.reference.chapter]?.[c.reference.verse] || [];
     let notMatchedSuggestion = [...suggestions];
@@ -211,12 +214,13 @@ export function predictCorpus(map, corpus, alignment_data) {
     let suggestionMisCount = 0;
     let notMatchedAlignment = [];
     for (let i = 0; i < alignments.length; i++) {
+      totalAlignments++;
       const alignment = alignments[i];
       const matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameAlignment(alignment, suggestion)));
       if (matchIndex >= 0) {
         notMatchedSuggestion.splice(matchIndex,1); // remove match
+        correctMatches++;
       } else {
-        mismatch++;
         // console.log(`c${corpusCount} - alignment ${i} not matched`, alignmentsToString(alignment));
         notMatchedAlignment.push({...alignment, index: i});
       }
@@ -228,20 +232,24 @@ export function predictCorpus(map, corpus, alignment_data) {
       let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameSource(alignment, suggestion)));
       if (matchIndex >= 0) {
         const suggestion = notMatchedSuggestion[matchIndex];
-        console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
+        console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
         console.log(`   has different suggestion:`, targetToString(suggestion?.predictedAlignment));
         notMatchedAlignment.splice(i, 1);
         notMatchedSuggestion.splice(matchIndex, 1);
         i--;
+        totalMismatches++;
+        partialMatches++;
       } else {
         matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialSourceMatch(alignment, suggestion)));
         if (matchIndex >= 0) {
           const suggestion = notMatchedSuggestion[matchIndex];
-          console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
+          console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
           console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
           notMatchedAlignment.splice(i, 1);
           notMatchedSuggestion.splice(matchIndex, 1);
           i--;
+          totalMismatches++;
+          partialMatches++;
         }
       }
     }
@@ -252,40 +260,43 @@ export function predictCorpus(map, corpus, alignment_data) {
       let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameTarget(alignment, suggestion)));
       if (matchIndex >= 0) {
         const suggestion = notMatchedSuggestion[matchIndex];
-        console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
+        console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
         console.log(`   has different suggestion:`, sourceToString(suggestion?.predictedAlignment));
         notMatchedAlignment.splice(i, 1);
         notMatchedSuggestion.splice(matchIndex, 1);
         i--;
+        totalMismatches++;
+        partialMatches++;
       } else {
         matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialTargetMatch(alignment, suggestion)));
         if (matchIndex >= 0) {
           const suggestion = notMatchedSuggestion[matchIndex];
-          console.log(`c${corpusCount} - alignment ${alignment.index} `, alignmentsToString(alignment));
+          console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
           console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
           notMatchedAlignment.splice(i, 1);
           notMatchedSuggestion.splice(matchIndex, 1);
           i--;
+          totalMismatches++;
+          partialMatches++;
         }
       }
     }
 
     for (let alignment of notMatchedAlignment) {
-      console.log(`c${corpusCount} - alignment ${alignment.index} not matched`, alignmentsToString(alignment));
+      console.log(`c${totalCorpus} - alignment ${alignment.index} not matched`, alignmentsToString(alignment));
     }
     
-    const notMatchedLen = notMatchedSuggestion.length;
-    if (notMatchedLen) {
-      for (let i = 0; i < notMatchedLen; i++) {
+    const notMatchedSuggestionLen = notMatchedSuggestion.length;
+    if (notMatchedSuggestionLen) {
+      for (let i = 0; i < notMatchedSuggestionLen; i++) {
         const suggestion = notMatchedSuggestion[i];
-        console.log(`c${corpusCount} - suggestion mismatch ${++suggestionMisCount}`, alignmentsToString(suggestion?.predictedAlignment));
+        console.log(`c${totalCorpus} - suggestion mismatch ${++suggestionMisCount}`, alignmentsToString(suggestion?.predictedAlignment));
       }
     }
 
-    mismatch += notMatchedLen;
-
-    console.log(suggestions);
+    totalMismatches += notMatchedSuggestionLen + notMatchedAlignment.length;
   }
+  console.log({verseCount: totalCorpus, totalMismatches, partialMatches, totalAlignments, correctMatches});
 }
 
 /**
