@@ -2,8 +2,8 @@ import isEqual from 'deep-equal';
 import WordMap, { Alignment, Ngram } from "wordmap";
 import {removeMarker, toUSFM} from "usfm-js";
 
-export async function initWordMap(alignment_data, corpusBaseFolder, corpusBookId, chapterCount = 0) {
-  const opts = {targetNgramLength: 5, warnings: false};
+export async function initWordMap(alignment_data, opts, corpusBaseFolder, corpusBookId, chapterCount = 0) {
+  opts = opts || {targetNgramLength: 5, warnings: false};
   const map = new WordMap(opts);
   if (alignment_data) {
     initAlignmentMemory(map, alignment_data);

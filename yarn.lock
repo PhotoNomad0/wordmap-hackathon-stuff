@@ -12108,10 +12108,10 @@ wordmap-lexer@0.3.6:
   dependencies:
     string-punctuation-tokenizer "2.0.0"
 
-wordmap@0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/wordmap/-/wordmap-0.8.2.tgz#49901ccde0e0152102a0c7733f89714d2d21d5cf"
-  integrity sha512-bbLXOsxUfGkZ9OUpAdFTbVOIoMGWDjF00sUiAUjP633882dPNq0dgIImRdmyZvdMIVj2IEvbH6sk5n7yLmHIbw==
+wordmap@0.9.0-alpha.8:
+  version "0.9.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/wordmap/-/wordmap-0.9.0-alpha.8.tgz#424d9ebc3ea5d9676f31b4ed81e8ad351b502bfb"
+  integrity sha512-aRXprmznkQoFDvF1XmSrPwUdWRhKRpEfLLev+yCeLcmV0U9/x94TS72kvSrU0TyBMVFQjVDzb+nI4CC6n1Zifg==
   dependencies:
     "@types/yargs" "^11.0.0"
     yargs "^11.0.0"
