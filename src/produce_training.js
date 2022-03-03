@@ -9,7 +9,8 @@ const opts = {targetNgramLength: 3, warnings: false};
 const wordmap = new WordMap.default(opts);
 
 
-const MISS_INCLUSION = .2;
+//const MISS_INCLUSION = 1.1; //100%
+const MISS_INCLUSION = .2; //20%
 
 function getJsonFile( path ){
     return require( "../public/" + path );
@@ -75,10 +76,21 @@ initCorpus(wordmap);
 const alignment_data = require("./resources/alignments_for_eph.json");
 var hashed_alignment_data = {}
 alignment_data.forEach( alignment => {
+    // const key = alignment.reference.bookId + ":" + alignment.reference.chapter + ":" + alignment.reference.verse + ":" + 
+    //             alignment.sourceNgram.length + ":" + alignment.sourceNgram[0].position + ":" +
+    //             alignment.targetNgram.length + ":" + alignment.targetNgram[0].position;
+
     const key = alignment.reference.bookId + ":" + alignment.reference.chapter + ":" + alignment.reference.verse + ":" + 
-                alignment.sourceNgram.length + ":" + alignment.sourceNgram[0].position + ":" +
-                alignment.targetNgram.length + ":" + alignment.targetNgram[0].position;
-    hashed_alignment_data[ key ] = alignment;      
+                ("n:" + alignment.sourceNgram.map( x => x.text ).join( ":" ) + ":" +
+                "n:" + alignment.targetNgram.map( x => x.text ).join( ":" )).toLowerCase();
+
+    alignment.matched_to_prediction = false;
+
+    if( key in hashed_alignment_data ){
+        hashed_alignment_data[ key ].push(alignment);      
+    }else{
+        hashed_alignment_data[ key ] = [alignment];
+    }
     //console.log( alignment )
 });
 
@@ -94,17 +106,28 @@ function use_verse( reference, sourceVerseText, targetVerseText ){
 
     //now iterate through the predictions and find them in the hashed alignment data.
     predictions.forEach( prediction => {
+        // const key = reference.bookId + ":" + reference.chapter + ":" + reference.verse + ":" +
+        //             prediction.alignment.sourceNgram.tokenLength + ":" + prediction.alignment.sourceNgram.tokenPosition + ":" +
+        //             prediction.alignment.targetNgram.tokenLength + ":" + prediction.alignment.targetNgram.tokenPosition;
+        
         const key = reference.bookId + ":" + reference.chapter + ":" + reference.verse + ":" +
-                    prediction.alignment.sourceNgram.tokenLength + ":" + prediction.alignment.sourceNgram.tokenPosition + ":" +
-                    prediction.alignment.targetNgram.tokenLength + ":" + prediction.alignment.targetNgram.tokenPosition;
+                    prediction.alignment.sourceNgram.key + ":" +
+                    prediction.alignment.targetNgram.key;
+
+        var valid_match = false;
+
+        if( key in hashed_alignment_data ){
+            hashed_alignment_data[key].forEach( alignment =>{
+                if( Math.abs(alignment.sourceNgram[0].position - prediction.alignment.sourceNgram.tokenPosition) <= 2 &&
+                    Math.abs(alignment.targetNgram[0].position - prediction.alignment.targetNgram.tokenPosition) <= 2 ){
+                        valid_match = true;
+                        alignment.matched_to_prediction = true;
+                }
+            });
+        }
 
         
-        if( key in hashed_alignment_data ){
-            const matching_alignment = hashed_alignment_data[key];
-            //console.log( "match" );
-            // console.log( prediction );
-            // console.log( matching_alignment );
-
+        if( valid_match ){
             prediction.scores.confidence = 1;
 
             collected_predictions.push( prediction )
@@ -154,6 +177,9 @@ for( var chapterNum = 0; chapterNum < numChapters; ++chapterNum ){
         total_collected_predictions = total_collected_predictions.concat(new_predictions);
     }
 }
+
+//check for unmatched allignments.
+
 
 //result:
 fs.writeFileSync( 'training_from_' + bookId + ".json", JSON.stringify(total_collected_predictions) );
