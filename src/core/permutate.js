@@ -1,21 +1,22 @@
 import Lexer from "wordmap-lexer";
 
-export const permutate = ({ wordmap, sourceSentence, targetSentence }) => {
+export const permutate = ({ wordMap, sourceString, targetString }) => {
   let sourceTokens = [];
   let targetTokens = [];
 
-  if (typeof sourceSentence === "string") {
-      sourceTokens = Lexer.tokenize(sourceSentence);
+  if (typeof sourceString === "string") {
+      sourceTokens = Lexer.tokenize(sourceString);
   } else {
-      sourceTokens = sourceSentence;
+      sourceTokens = sourceString;
   }
 
-  if (typeof targetSentence === "string") {
-      targetTokens = Lexer.tokenize(targetSentence);
+  if (typeof targetString === "string") {
+      targetTokens = Lexer.tokenize(targetString);
   } else {
-      targetTokens = targetSentence;
+      targetTokens = targetString;
   }
 
-  const runOutput = engine.run(sourceTokens, targetTokens)
-  const predictions = engine.score();
+  const runOutput = wordMap.engine.run(sourceTokens, targetTokens)
+  const predictions = wordMap.engine.score(runOutput);
+  return predictions;
 };

@@ -1,34 +1,27 @@
-import {useEffect, useState} from "react";
+import React from "react";
+
 import "./styles.css";
-import WordMap from "wordmap";
-import {getPredictions, initAlignmentMemory, initCorpus, initWordMap} from "./wordMapOps";
-import Permutations from "./components/Permutations";
+
 import useAppState from "./hooks/useAppState";
-const alignment_data = require("./resources/alignments_for_eph.json");
+import useCorpus from "./hooks/useCorpus";
+import useWordMap from "./hooks/useWordMap";
+
+import Corpus from "./components/Corpus";
+import Permutations from "./components/Permutations";
+import Predictions from "./components/Predictions";
+
 
 export default function App() {
-  // const { state, actions, wordmap } = useAppState();
-  const [results, setResults] = useState('');
-  const [wordMap, setWordMap] = useState(null);
-
-  useEffect(async () => {
-    const chapterCount = 6;
-    const bookId = 'eph';
-    const { map, target, source, corpus } = await initWordMap(alignment_data, '.', bookId, chapterCount);
-
-    const sourceVerseText = 'Παῦλος, ἀπόστολος ( οὐκ ἀπ’ ἀνθρώπων, οὐδὲ δι’ ἀνθρώπου, ἀλλὰ διὰ Ἰησοῦ Χριστοῦ, καὶ Θεοῦ Πατρὸς τοῦ ἐγείραντος αὐτὸν ἐκ νεκρῶν)';
-    const targetVerseText = 'Paul, an apostle—not from men nor by man, but through Jesus Christ and God the Father, the one who raised him from the dead';
-    const prediction = await getPredictions(map, sourceVerseText, targetVerseText);
-    setResults(JSON.stringify(prediction));
-    setWordMap(map);
-  }, [  ]);
+  const { state: { sourceString, targetString }, actions } = useAppState();
+  const corpus = useCorpus({ basePath: '.', bookId: 'eph', chapterCount: 6 });
+  const wordMap = useWordMap({ corpus });
 
   return (
     <div className="App">
       <h1>WordMap Tuning</h1>
-      <h2>Results:</h2>
-      <div>{results}</div>
-      <h2>Permutations:</h2>
+      <Corpus corpus={corpus} />
+      <Permutations wordMap={wordMap} sourceString={sourceString} targetString={targetString} />
+      <Predictions />
     </div>
   );
 };

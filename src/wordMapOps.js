@@ -67,7 +67,7 @@ export function initAlignmentMemory(map, alignment_data) {
   map.appendAlignmentMemory(alignment_data);
 }
 
-async function getJsonFile(filePath) {
+export async function getJsonFile(filePath) {
   try {
     const response = await fetch(filePath);
     const jsonData = await response.json();
@@ -79,7 +79,7 @@ async function getJsonFile(filePath) {
   return null;
 }
 
-async function getBibleContent(folder, chapterCount) {
+export async function getBibleContent(folder, chapterCount) {
   const target = {};
   for (let chapter = 1; chapter <= chapterCount; chapter++) {
     const targetChapter = {};
