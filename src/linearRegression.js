@@ -28,22 +28,23 @@ function printProgress(i, m, b, ys, xs) {
 }
 
 export async function lrRun(passes, errorFunc, initialAlignmentPosition) {
+  tf.setBackend('cpu'); // run in CPU
   const alignmentPosition = tf.variable(tf.scalar(initialAlignmentPosition));
   const learningRate = 0.01;
   const optimizer = tf.train.sgd(learningRate);
   // tfvis.show.modelSummary({ name: "Model Summary" }, optimizer);
 
   console.log('alignmentPosition initial', alignmentPosition.dataSync());
-  let history = [];
+  // let history = [];
   for (let i = 0; i < passes; i++) {
-    tf.tidy(() => { // automatically clean up tensors from the GPU
+    // tf.tidy(() => { // automatically clean up tensors from the GPU
       optimizer.minimize(() => {
         const alignmentPositionValue = alignmentPosition.dataSync();
         const error_sq = errorFunc(alignmentPositionValue[0], i);
         const err_sq = tf.scalar(error_sq);
         return err_sq;
       });
-    });
+    // });
   }
   
   // tf.tidy(() => { // automatically clean up tensors from the GPU
@@ -102,4 +103,4 @@ export async function lrRun(passes, errorFunc, initialAlignmentPosition) {
   
 }
 
-document.addEventListener("DOMContentLoaded", lrRun);
+// document.addEventListener("DOMContentLoaded", lrRun);
