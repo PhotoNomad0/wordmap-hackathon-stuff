@@ -1,9 +1,12 @@
 import {
+  initAlignmentMemory,
   initCorpusFromTargetAndSource,
   initWordMap,
   loadTargetAndSource,
   predictCorpus,
 } from "./wordMapOps";
+import {lrRun} from "./linearRegression";
+import WordMap from "wordmap";
 const alignment_data = require("./resources/alignments_for_eph.json");
 
 /**
@@ -35,7 +38,7 @@ const initialEngineWeights = {
   "alignmentOccurrences": 0.4,
   "lemmaAlignmentOccurrences": 0.4,
   "uniqueness": 0.5,
-  "lemmaUniqueness": 0.500001,
+  "lemmaUniqueness": 0.5,
 
   "sourceCorpusPermutationsFrequencyRatio": 0.7,
   "sourceCorpusLemmaPermutationsFrequencyRatio": 0.7,
@@ -49,39 +52,57 @@ const initialEngineWeights = {
 };
 
 
-async function iterateWordMap(target, source, bookId, chapterCount, wordMapOpts) {
-  const { map } = await initWordMap(alignment_data, wordMapOpts);
+function iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass) {
+  let start = new Date();
+  const map = new WordMap(wordMapOpts);
+  initAlignmentMemory(map, alignment_data);
   const corpus = initCorpusFromTargetAndSource(chapterCount, target, source, map, bookId);
   const results = predictCorpus(map, corpus, alignment_data);
-  return results;
+  let end = new Date();
+  let elapsedSecs_ = elapsedSecs(start, end);
+  const error = results.totalMismatches/results.totalAlignments;
+  const error_sq = error * error;
+  const data = {
+    pass,
+    error,
+    error_sq,
+    ...results,
+    elapsedSecs: elapsedSecs_,
+    wordMapOpts
+  }
+  console.log(`wordMap pass ${pass}, elapsed ${elapsedSecs_} sec:`, data);
+  return data;
+}
+
+function elapsedSecs(start, end) {
+  let wordMapTime = (end.getTime() - start.getTime()) / 1000;
+  return wordMapTime;
 }
 
 export async function doWordMapIterations() {
   const chapterCount = 6;
   const bookId = 'eph';
-  const passes = 1;
+  const passes = 100;
   const recording = [];
   const wordMapOpts = {
     targetNgramLength: 5,
     warnings: false,
     engineWeights: initialEngineWeights,
   };
-  let start = new Date();
   const {target, source} = await loadTargetAndSource('.', bookId, chapterCount);
-  for (let pass = 0; pass < passes; pass++) {
-    const results = await iterateWordMap(target, source, bookId, chapterCount, wordMapOpts);
-    let end = new Date();
-    let wordMapTime = (end.getTime() - start.getTime()) / 1000;
-    console.log(`pass ${pass}, elapsed ${wordMapTime} sec:`, results);
-    start = end;
-    const data = {
-      pass,
-      results,
-      wordMapTime,
-      wordMapOpts
+  
+  function wordMapErrorFunction(alignmentPosition, pass) {
+    const results = iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass);
+    const wordMapResults = {
+      ...results,
+      alignmentPosition
     }
-    recording.push(data);
-    console.log(`cumulative status:`, JSON.stringify(recording));
+    recording.push(wordMapResults);
+    return results.error_sq;
   }
+
+  await lrRun(passes, wordMapErrorFunction, wordMapOpts.engineWeights.alignmentPosition);
+  
+  console.log("DONE");
 }
 
