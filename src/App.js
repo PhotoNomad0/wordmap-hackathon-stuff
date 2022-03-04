@@ -3,6 +3,7 @@ import "./styles.css";
 import WordMap from "wordmap";
 import {getPredictions, initAlignmentMemory, initCorpus, initWordMap} from "./wordMapOps";
 import Permutations from "./components/Permutations";
+import Brain from "./components/Brain";
 const alignment_data = require("./resources/alignments_for_eph.json");
 
 export default function App() {
@@ -23,15 +24,11 @@ export default function App() {
 
 return (
   <div className="App">
+    <h2>Brain.js:</h2>
+    <Brain />
     <h1>WordMap Tuning</h1>
     <h2>Results:</h2>
     <div>{results}</div>
-    <h2>Permutations:</h2>
-    {/*<Permutations*/}
-    {/*  wordmap={wordmap}*/}
-    {/*  sourceSentence={sourceVerseText}*/}
-    {/*  targetSenetence={targetVerseText}*/}
-    {/*/>*/}
   </div>
 );
 }
