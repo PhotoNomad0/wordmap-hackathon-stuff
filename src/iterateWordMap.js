@@ -110,7 +110,7 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
   const alignment_data = fs.readJsonSync("./src/resources/alignments_for_eph.json");
 
   function wordMapErrorFunction(parameter, value) {
-    const opts = {...wordMapOpts}; // initialize to defaults
+    const opts = _.cloneDeep(wordMapOpts); // initialize to defaults
     opts.engineWeights[parameter] = value; // set value for test parameter
     const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, opts, value);
     const wordMapResults = {
