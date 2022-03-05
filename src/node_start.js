@@ -12,8 +12,8 @@ async function doRun() {
   fs.ensureDirSync(outputFolder);
   fs.writeJsonSync(path.join(outputFolder, `${parameter}.json`), results);
   const endTime = new Date();
-  const elapsedSecs = elapsedSecs(startTime, endTime);
-  console.log(`wordMap processed ${parameter}, elapsed ${results.elapsedSecs} sec:`, elapsedSecs);
+  const elapsedSecs_ = elapsedSecs(startTime, endTime);
+  console.log(`wordMap processed ${parameter}, elapsed ${elapsedSecs_} sec:`);
 }
 
 doRun().then(() => {

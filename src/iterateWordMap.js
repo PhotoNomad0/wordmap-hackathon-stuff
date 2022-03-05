@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   getJsonFile,
   initAlignmentMemory,
@@ -47,7 +48,7 @@ function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wo
     error_sq,
     ...results,
     elapsedSecs: elapsedSecs_,
-    wordMapOpts
+    wordMapOpts: _.cloneDeep(wordMapOpts),
   }
   return data;
 }
@@ -109,9 +110,12 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
   const alignment_data = fs.readJsonSync("./src/resources/alignments_for_eph.json");
 
   function wordMapErrorFunction(parameter, value) {
-    const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, value);
+    const opts = {...wordMapOpts}; // initialize to defaults
+    opts.engineWeights[parameter] = value; // set value for test parameter
+    const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, opts, value);
     const wordMapResults = {
       ...results,
+      parameter,
       [parameter]: value,
     }
     recording.push(wordMapResults);
