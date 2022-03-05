@@ -1,0 +1,7 @@
+venv/*
+.ipynb_checkpoints/*
+__pycache__/*
+tmp/*
+catboost_info/*
+*.kate-swp
+*.swp
