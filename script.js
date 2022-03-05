@@ -27,9 +27,19 @@ function printProgress(i, m, b, ys, xs) {
   return error_sq;
 }
 
+function addNoise(noiseMagnitude, initial_x_arry, ys) {
+  const randomNoise = [];
+  const noiseOffset = noiseMagnitude / 2;
+  for (let i = 0; i < initial_x_arry.length; i++) {
+    randomNoise.push(Math.random()*noiseMagnitude - noiseOffset);
+  }
+  console.log('randomNoise', randomNoise);
+  return ys.add(tf.tensor(randomNoise));
+}
+
 async function run() {
   console.log("tf", tf);
-  const addNoise = true;
+  const addNoise_ = true;
   const m_init = 0.5;
   const m = tf.variable(tf.scalar(m_init));
   const b_init = 0;
@@ -39,12 +49,9 @@ async function run() {
   const b_actual = 0.5;
   const m_actual = 1;
   let ys = xs.mul(m_actual).add(b_actual);
-  if (addNoise) {
-    const randomNoise = [];
-    for (let i = 0; i < initial_x_arry.length; i++) {
-      randomNoise.push(Math.random() - 0.5);
-    }
-    ys = ys.add(tf.tensor(randomNoise));
+  if (addNoise_) {
+    const noiseMagnitude = 0.5;
+    ys = addNoise(noiseMagnitude, initial_x_arry, ys);
   }
   console.log('ys', ys.dataSync());
 
@@ -125,12 +132,8 @@ async function run() {
     const opts = { xLabel: 'step', yLabel: 'parameter', yAxisDomain: [0, 1.1]};
     const surface = { name: `Solving for m and b in y=m*x+b`, tab: 'Parameter Optimization'};
     tfvis.render.linechart(surface, data, opts);
-    mSeries = [];
-    bSeries = [];
-    mError = [];
-    bError = [];
-    loss = [];
-    history = [];
+    
+    tf.disposeVariables(); //cleanup all gpu variables
   });
   
 }
