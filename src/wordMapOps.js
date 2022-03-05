@@ -143,30 +143,29 @@ function containsToken(token, tokens) {
   return pos >= 0;
 }
 
-function partialSourceMatch(alignment, suggestion) {
+function doPartialMatch(alignment, suggestion) {
   const suggestedAlignment = suggestion?.predictedAlignment;
   const aNgrams = getNgramTokens(alignment);
   const bNgrams = getNgramTokens(suggestedAlignment);
+  let sourceMatches = 0;
+  let partialMatch = false;
   for (let token of aNgrams.sourceNgram) {
     let match = containsToken(token, bNgrams.sourceNgram);
     if (match) {
-      return match;
+      sourceMatches++;
+      partialMatch = true;
     }
   }
-  return false;
-}
-
-function partialTargetMatch(alignment, suggestion) {
-  const suggestedAlignment = suggestion?.predictedAlignment;
-  const aNgrams = getNgramTokens(alignment);
-  const bNgrams = getNgramTokens(suggestedAlignment);
+  let targetMatches = 0;
   for (let token of aNgrams.targetNgram) {
     let match = containsToken(token, bNgrams.targetNgram);
     if (match) {
-      return match;
+      targetMatches++;
+      partialMatch = true;
     }
   }
-  return false;
+  const partialRatio = (sourceMatches/aNgrams.sourceNgram.length) * (targetMatches/aNgrams.targetNgram.length);
+  return { partialRatio, partialMatch};
 }
 
 function tokensToString(nGram) {
@@ -200,6 +199,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
   const alignmentsByVerse = getAlignmentsByVerse(alignment_data);
   let totalMismatches = 0;
   let partialMatches = 0;
+  let partialRatioMatches = 0;
   let totalCorpus = -1;
   let totalAlignments = -1;
   let correctMatches = 0;
@@ -225,59 +225,27 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
       }
     }
 
-    // do partial source match
+    // do partial match
     for (let i = 0; i < notMatchedAlignment.length; i++) {
       const alignment = notMatchedAlignment[i];
-      let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameSource(alignment, suggestion)));
+      let partialRatio = 0;
+      const matchIndex = notMatchedSuggestion.findIndex(suggestion => {
+        const { partialRatio: partialRatio_, partialMatch} = doPartialMatch(alignment, suggestion);
+        if (partialMatch) {
+          partialRatio = partialRatio_;
+        }
+        return partialMatch;
+      });
       if (matchIndex >= 0) {
         const suggestion = notMatchedSuggestion[matchIndex];
         verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-        verbose && console.log(`   has different suggestion:`, targetToString(suggestion?.predictedAlignment));
+        verbose && console.log(`   has different suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
         notMatchedAlignment.splice(i, 1);
         notMatchedSuggestion.splice(matchIndex, 1);
         i--;
         totalMismatches++;
         partialMatches++;
-      } else {
-        matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialSourceMatch(alignment, suggestion)));
-        if (matchIndex >= 0) {
-          const suggestion = notMatchedSuggestion[matchIndex];
-          verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-          verbose && console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
-          notMatchedAlignment.splice(i, 1);
-          notMatchedSuggestion.splice(matchIndex, 1);
-          i--;
-          totalMismatches++;
-          partialMatches++;
-        }
-      }
-    }
-
-    // do partial target match
-    for (let i = 0; i < notMatchedAlignment.length; i++) {
-      const alignment = notMatchedAlignment[i];
-      let matchIndex = notMatchedSuggestion.findIndex(suggestion => (sameTarget(alignment, suggestion)));
-      if (matchIndex >= 0) {
-        const suggestion = notMatchedSuggestion[matchIndex];
-        verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-        verbose && console.log(`   has different suggestion:`, sourceToString(suggestion?.predictedAlignment));
-        notMatchedAlignment.splice(i, 1);
-        notMatchedSuggestion.splice(matchIndex, 1);
-        i--;
-        totalMismatches++;
-        partialMatches++;
-      } else {
-        matchIndex = notMatchedSuggestion.findIndex(suggestion => (partialTargetMatch(alignment, suggestion)));
-        if (matchIndex >= 0) {
-          const suggestion = notMatchedSuggestion[matchIndex];
-          verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} `, alignmentsToString(alignment));
-          verbose && console.log(`   partial match with suggestion:`, alignmentsToString(suggestion?.predictedAlignment));
-          notMatchedAlignment.splice(i, 1);
-          notMatchedSuggestion.splice(matchIndex, 1);
-          i--;
-          totalMismatches++;
-          partialMatches++;
-        }
+        partialRatioMatches+=partialRatio;
       }
     }
 
@@ -295,7 +263,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
 
     totalMismatches += notMatchedSuggestionLen + notMatchedAlignment.length;
   }
-  const results = {verseCount: totalCorpus, totalMismatches, partialMatches, totalAlignments, correctMatches};
+  const results = {verseCount: totalCorpus, totalMismatches, partialMatches, partialRatioMatches, totalAlignments, correctMatches};
   return results;
 }
 
