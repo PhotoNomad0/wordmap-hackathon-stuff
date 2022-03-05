@@ -1,35 +1,15 @@
 import {
+  getJsonFile,
   initAlignmentMemory,
   initCorpusFromTargetAndSource,
   initWordMap,
-  loadTargetAndSource,
   predictCorpus,
 } from "./wordMapOps";
 import {lrRun} from "./linearRegression";
 import WordMap from "wordmap";
-const alignment_data = require("./resources/alignments_for_eph.json");
-
-/**
- * defaultWeights: NumberObject = {
- *         "alignmentPosition": 0.7,
- *         "ngramLength": 0.2,
- *         "characterLength": 0.3,
- *         "alignmentOccurrences": 0.4,
- *         "lemmaAlignmentOccurrences": 0.4,
- *         "uniqueness": 0.5,
- *         "lemmaUniqueness": 0.5,
- * 
- *         "sourceCorpusPermutationsFrequencyRatio": 0.7,
- *         "sourceCorpusLemmaPermutationsFrequencyRatio": 0.7,
- *         "targetCorpusPermutationsFrequencyRatio": 0.7,
- *         "targetCorpusLemmaPermutationsFrequencyRatio": 0.7,
- * 
- *         "sourceAlignmentMemoryFrequencyRatio": 0.8,
- *         "sourceAlignmentMemoryLemmaFrequencyRatio": 0.7,
- *         "targetAlignmentMemoryFrequencyRatio": 0.7,
- *         "targetAlignmentMemoryLemmaFrequencyRatio": 0.7
- *     };
- */
+import {removeMarker, toUSFM} from "usfm-js";
+import fs from "fs-extra";
+// const files = fs.readdirSync('.');
 
 const initialEngineWeights = {
   "alignmentPosition": 0.7,
@@ -51,8 +31,7 @@ const initialEngineWeights = {
   "targetAlignmentMemoryLemmaFrequencyRatio": 0.7
 };
 
-
-function iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass) {
+function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, pass) {
   let start = new Date();
   const map = new WordMap(wordMapOpts);
   initAlignmentMemory(map, alignment_data);
@@ -70,7 +49,6 @@ function iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass)
     elapsedSecs: elapsedSecs_,
     wordMapOpts
   }
-  console.log(`wordMap pass ${pass}, elapsed ${elapsedSecs_} sec:`, data);
   return data;
 }
 
@@ -79,30 +57,74 @@ function elapsedSecs(start, end) {
   return wordMapTime;
 }
 
-export async function doWordMapIterations() {
+function getBibleContent(folder, chapterCount) {
+  const target = {};
+  for (let chapter = 1; chapter <= chapterCount; chapter++) {
+    const targetChapter = {};
+    const targetChapterPath = `${folder}/${chapter}.json`;
+    const verses = fs.readJsonSync(targetChapterPath);
+
+    for (const verse of Object.keys(verses)) {
+      let verseData = verses[verse];
+      let verseStr;
+      if (typeof verseData !== 'string') {
+        const outputData = {
+          'chapters': {},
+          'headers': [],
+          'verses': { '1': verseData },
+        };
+        const usfm = toUSFM(outputData, {chunk: true});
+        const [, verseText ] = usfm.split('\\v 1');
+        verseStr = verseText || '';
+      } else {
+        verseStr = verseData;
+      }
+      verseStr = removeMarker(verseStr).trim().replaceAll('\n', ' ');
+      targetChapter[verse] = verseStr;
+    }
+    target[chapter] = targetChapter;
+  }
+  return target;
+}
+
+export function loadTargetAndSource(baseFolder, bookId, chapterCount) {
+  if (baseFolder) {
+    const target = getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
+    const source = getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
+    return {target, source};
+  }
+  return {};
+}
+
+export async function doWordMapIterations(parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
   const chapterCount = 6;
   const bookId = 'eph';
-  const passes = 100;
   const recording = [];
   const wordMapOpts = {
     targetNgramLength: 5,
     warnings: false,
     engineWeights: initialEngineWeights,
   };
-  const {target, source} = await loadTargetAndSource('.', bookId, chapterCount);
-  
-  function wordMapErrorFunction(alignmentPosition, pass) {
-    const results = iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass);
+  const {target, source} = loadTargetAndSource('./public', bookId, chapterCount);
+  const alignment_data = fs.readJsonSync("./src/resources/alignments_for_eph.json");
+
+  function wordMapErrorFunction(parameter, value) {
+    const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, value);
     const wordMapResults = {
       ...results,
-      alignmentPosition
+      [parameter]: value,
     }
     recording.push(wordMapResults);
+    console.log(`wordMap pass ${parameter}=${value}, elapsed ${results.elapsedSecs} sec:`, wordMapResults);
     return results.error_sq;
   }
 
-  await lrRun(passes, wordMapErrorFunction, wordMapOpts.engineWeights.alignmentPosition);
-  
+  // await lrRun(passes, wordMapErrorFunction, wordMapOpts.engineWeights.alignmentPosition);
+  for (let pass = start; pass <= end; pass += stepSize) {
+    wordMapErrorFunction(parameter, pass);
+  }
+
   console.log("DONE");
+  return recording;
 }
 

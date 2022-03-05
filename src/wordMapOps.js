@@ -22,7 +22,7 @@ export async function initWordMap(alignment_data, opts, corpusBaseFolder, corpus
 export const getPredictions = (map, sourceVerseText, targetVerseText) => new Promise(resolve => {
   setTimeout(() => {
     const suggestions = map.predict(sourceVerseText, targetVerseText);
-    
+
     if (suggestions) {
       resolve(suggestions);
     }
@@ -252,7 +252,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
         }
       }
     }
-    
+
     // do partial target match
     for (let i = 0; i < notMatchedAlignment.length; i++) {
       const alignment = notMatchedAlignment[i];
@@ -284,7 +284,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
     for (let alignment of notMatchedAlignment) {
       verbose && console.log(`c${totalCorpus} - alignment ${alignment.index} not matched`, alignmentsToString(alignment));
     }
-    
+
     const notMatchedSuggestionLen = notMatchedSuggestion.length;
     if (notMatchedSuggestionLen) {
       for (let i = 0; i < notMatchedSuggestionLen; i++) {
@@ -300,7 +300,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
 }
 
 /**
- * 
+ *
  * @param {WordMap} map
  * @param {Array} alignment_data
  */
@@ -308,7 +308,7 @@ export function initAlignmentMemory(map, alignment_data) {
   map.appendAlignmentMemory(alignment_data);
 }
 
-async function getJsonFile(filePath) {
+export async function getJsonFile(filePath) {
   try {
     const response = await fetch(filePath);
     const jsonData = await response.json();
