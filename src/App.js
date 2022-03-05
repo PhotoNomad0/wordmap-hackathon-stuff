@@ -4,6 +4,7 @@ import WordMap from "wordmap";
 import {getPredictions, initAlignmentMemory, initCorpus, initWordMap, predictCorpus} from "./wordMapOps";
 import Permutations from "./components/Permutations";
 import {doWordMapIterations} from "./iterateWordMap";
+import {plotWordMapData} from "./linearRegression";
 const alignment_data = require("./resources/alignments_for_eph.json");
 
 export default function App() {
@@ -11,7 +12,10 @@ export default function App() {
   const [wordMap, setWordMap] = useState(null);
 
   useEffect(async () => {
-    doWordMapIterations();
+    // doWordMapIterations();
+    const parameter = 'alignmentPosition';
+    const filePath = `./analysisData/${parameter}.json`;
+    await plotWordMapData(filePath, parameter);
   }, [  ]);
 
 return (
