@@ -59,7 +59,7 @@ function iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass)
   const corpus = initCorpusFromTargetAndSource(chapterCount, target, source, map, bookId);
   const results = predictCorpus(map, corpus, alignment_data);
   let end = new Date();
-  let elapsedSecs_ = elapsedSecs(start, end);
+  const elapsedSecs_ = elapsedSecs(start, end);
   const error = results.totalMismatches/results.totalAlignments;
   const error_sq = error * error;
   const data = {
