@@ -52,7 +52,7 @@ function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wo
   return data;
 }
 
-function elapsedSecs(start, end) {
+export function elapsedSecs(start, end) {
   let wordMapTime = (end.getTime() - start.getTime()) / 1000;
   return wordMapTime;
 }
