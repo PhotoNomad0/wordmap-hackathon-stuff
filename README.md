@@ -1,7 +1,7 @@
-**Parameter Optimization Tutorial:**
+##WordMAP Parameter Optimization
 
-https://codecraft.tv/courses/tensorflowjs/tensors/optimisation/
+###Running Program in Node
+yarn && yarn run iterate
 
-**Documentation for "Gradient descent (with momentum) optimizer":**
-
-https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/SGD
+###Running Program in Node with Debugger
+yarn && yarn run iterate-debug

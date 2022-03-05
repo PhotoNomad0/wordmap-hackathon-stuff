@@ -12,7 +12,7 @@ import {removeMarker, toUSFM} from "usfm-js";
 import fs from "fs-extra";
 // const files = fs.readdirSync('.');
 
-const initialEngineWeights = {
+export const initialEngineWeights = {
   "alignmentPosition": 0.7,
   "ngramLength": 0.2,
   "characterLength": 0.3,
@@ -117,6 +117,7 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
       ...results,
       parameter,
       [parameter]: value,
+      parameterInitial: wordMapOpts.engineWeights[parameter],
     }
     recording.push(wordMapResults);
     console.log(`wordMap pass ${parameter}=${value}, elapsed ${results.elapsedSecs} sec:`, wordMapResults);
