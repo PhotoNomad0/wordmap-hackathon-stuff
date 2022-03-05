@@ -76,10 +76,10 @@ export async function plotWordMapData(filePath, parameter) {
       })
     }
 
-    const series = ['correct', 'partial', 'error'];
+    const series = ['correct alignments', 'partial alignments', 'error'];
     const data = { values: [correctSeries, partialSeries, errorSeries], series};
     const opts = { xLabel: parameter, yLabel: 'value', yAxisDomain: [0, 1.1]};
-    const surface = { name: `Optimizing ${parameter}`, tab: `${parameter} effects`};
+    const surface = { name: `Visualizing effects of changes to '${parameter}'`, tab: `Optimizing ${parameter}`};
     await tfvis.render.linechart(surface, data, opts);
 }
 
