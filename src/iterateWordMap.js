@@ -10,6 +10,7 @@ import {lrRun} from "./linearRegression";
 import WordMap from "wordmap";
 import {removeMarker, toUSFM} from "usfm-js";
 import fs from "fs-extra";
+import * as path from "path-extra";
 // const files = fs.readdirSync('.');
 
 export const initialEngineWeights = {
@@ -31,6 +32,63 @@ export const initialEngineWeights = {
   "targetAlignmentMemoryFrequencyRatio": 0.7,
   "targetAlignmentMemoryLemmaFrequencyRatio": 0.7
 };
+
+export function getJsonFiles(folderPath) {
+  if (fs.existsSync(folderPath)) {
+    const files = fs.readdirSync(folderPath)
+      .filter(file => path.extname(file) === '.json');
+    return files;
+  }
+  return null;
+}
+
+export function isFolder(folderPath) {
+  return fs.existsSync(folderPath) && fs.lstatSync(folderPath).isDirectory();
+}
+
+export function getFolders(folderPath) {
+  if (isFolder(folderPath)) {
+    const files = fs.readdirSync(folderPath);
+    const folders = files.filter(subfolder =>{
+      if (subfolder !== '.DS_Store') {
+        return isFolder(path.join(folderPath, subfolder));
+      }
+      return false;
+    });
+    if (folders.length) {
+      return folders;
+    }
+  }
+  return null;
+}
+
+export function indexFolder(folderPath) {
+  if (isFolder(folderPath)) {
+    let index = {};
+    const folders = getFolders(folderPath);
+    if (folders) {
+      for (const folder of folders) {
+        const fpath = path.join(folderPath, folder);
+        const subIndex = indexFolder(fpath);
+        if (subIndex) {
+          index[folder] = {
+            ...index[folder],
+            ...subIndex
+          }
+        }
+      }
+    }
+    const jsonFiles = getJsonFiles(folderPath);
+    if (jsonFiles) {
+      index = {
+        ...index,
+        files: jsonFiles.map(item => path.join(folderPath, item))
+      }
+    }
+    return index;
+  }
+  return null;
+}
 
 function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, pass) {
   let start = new Date();

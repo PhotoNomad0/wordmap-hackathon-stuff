@@ -1,7 +1,12 @@
 // run in node;
 const fs = require('fs-extra');
 const path = require('path-extra');
-const {doWordMapIterations, elapsedSecs, initialEngineWeights} = require("./iterateWordMap");
+const {doWordMapIterations, elapsedSecs, initialEngineWeights, indexFolder} = require("./iterateWordMap");
+
+function saveIndex(folderPath) {
+  const index = indexFolder(folderPath);
+  fs.writeJsonSync(path.join(folderPath, 'index.json'), index);
+}
 
 async function doParameterAnalysis(parameter, start, end, stepSize, targetLang) {
   const startTime = new Date();
@@ -16,6 +21,8 @@ async function doParameterAnalysis(parameter, start, end, stepSize, targetLang) 
 }
 
 async function doRun() {
+  const baseFolder = './public';
+  saveIndex(baseFolder);
   const targetLang = 'en';
   const startTime = new Date();
   const engineWeights = Object.keys(initialEngineWeights).sort();
@@ -25,6 +32,7 @@ async function doRun() {
   }
   const endTime = new Date();
   const elapsedSecs_ = elapsedSecs(startTime, endTime);
+  saveIndex(baseFolder);
   console.log(`total run time: ${elapsedSecs_} sec:`);
 }
 
