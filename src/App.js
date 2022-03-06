@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>WordMap Tuning</h1>
+      <h1 id="header">WordMap Tuning</h1>
 
       <div className="plot" id="plot0"></div>
       <div className="label" id="label0"></div>

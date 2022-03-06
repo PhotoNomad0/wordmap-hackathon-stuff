@@ -58,6 +58,7 @@ function round(num, mult = 10000) {
 }
 
 export async function plotWordMapData() {
+  document.getElementById(`header`).innerHTML = `Word Map Tuning for Ephesians`;
   const langId = 'en';
   const engineWeights = Object.keys(initialEngineWeights).sort();
   const parameter = '-';
