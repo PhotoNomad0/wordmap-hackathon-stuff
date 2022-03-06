@@ -5,6 +5,13 @@
 #-----create venv------
 #(venv is a local collection of python 
 #packages so your system isn't messed with)
+
+#you may need to install venv
+#install venv (linux)
+pip3 install venv
+#install venv (windows)
+py -m pip install venv
+
 #create venv (linux)
 python3 -m venv venv
 #create venv (windows)
