@@ -115,6 +115,7 @@ export async function plotWordMapData() {
         label += `delta: ${round(delta, 1000000)}, `;
         label += '<br/>';
       }
+      label += '<br/><br/><br/>';
       document.getElementById(`label${i}`).innerHTML = `${parameter}<br/>${label}`;
       await tfvis.render.linechart(document.getElementById(`plot${i}`), data, opts);
     } else {
