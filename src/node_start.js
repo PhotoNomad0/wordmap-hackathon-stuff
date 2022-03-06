@@ -20,7 +20,7 @@ async function doRun() {
   const startTime = new Date();
   const engineWeights = Object.keys(initialEngineWeights).sort();
   for (const parameter of engineWeights) {
-    const start = 0, end = 1.5, stepSize = 0.1;
+    const start = 0, end = 1.51, stepSize = 0.1;
     await doParameterAnalysis(parameter, start, end, stepSize, targetLang);
   }
   const endTime = new Date();

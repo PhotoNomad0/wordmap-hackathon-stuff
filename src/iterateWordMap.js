@@ -98,8 +98,8 @@ export function loadTargetAndSource(baseFolder, bookId, chapterCount) {
 }
 
 export async function doWordMapIterations(parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
-  const chapterCount = 6;
-  const bookId = 'eph';
+  const chapterCount = 24;
+  const bookId = 'luk';
   const recording = [];
   const wordMapOpts = {
     targetNgramLength: 5,
