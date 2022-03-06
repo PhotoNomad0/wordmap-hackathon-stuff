@@ -1,6 +1,7 @@
 import * as tf from '@tensorflow/tfjs';
 import * as tfvis from '@tensorflow/tfjs-vis';
 import {getJsonFile} from "./wordMapOps";
+import {initialEngineWeights} from "./iterateWordMap";
 
 /**
  * calculate y=m*x+b for each element of x
@@ -51,36 +52,74 @@ export async function lrRun(passes, errorFunc, initialAlignmentPosition) {
 
 }
 
-export async function plotWordMapData(filePath, parameter) {
-  const history = await getJsonFile(filePath);
-  console.log(history);
+function round(num, mult = 10000) {
+  var m = Number((Math.abs(num) * mult).toPrecision(15));
+  return Math.round(m) / mult * Math.sign(num);
+}
 
-    // build chart
-    let correctSeries = [];
-    let partialSeries = [];
-    let errorSeries = [];
-    for (let i = 0; i < history.length; i++) {
-      const item = history[i];
-      const step = item.pass;
-      correctSeries.push({
-        x: step,
-        y: (item.correctMatches/item.totalAlignments),
-      })
-      partialSeries.push({
-        x: step,
-        y: (item.partialMatches/item.totalAlignments),
-      })
-      errorSeries.push({
-        x: step,
-        y: (item.error),
-      })
+export async function plotWordMapData() {
+  const langId = 'en';
+  const engineWeights = Object.keys(initialEngineWeights).sort();
+  const parameter = '-';
+  const surface = {name: `Visualizing effects of changes to`, tab: `Optimizing`};
+  for (let i = 0; i < engineWeights.length; i++ ) {
+    const parameter= engineWeights[i];
+    const filePath = `./analysisData/${langId}/${parameter}.json`;
+    const history = await getJsonFile(filePath);
+    if (history) {
+      // build chart
+      let correctSeries = [];
+      let partialSeries = [];
+      let partialRatioSeries = [];
+      let errorSeries = [];
+      for (let i = 0; i < history.length; i++) {
+        const item = history[i];
+        const step = item.pass;
+        partialRatioSeries.push({
+          x: step,
+          y: (item.partialRatioMatches / item.totalAlignments),
+        })
+        correctSeries.push({
+          x: step,
+          y: (item.correctMatches / item.totalAlignments),
+        })
+        partialSeries.push({
+          x: step,
+          y: (item.partialMatches / item.totalAlignments),
+        })
+        errorSeries.push({
+          x: step,
+          y: (item.error),
+        })
+      }
+
+      const series = ['correct alignments', 'partial alignments', 'partial ratio', 'error'];
+      const data = {values: [correctSeries, partialSeries, partialRatioSeries, errorSeries], series};
+      const opts = {
+        xLabel: parameter,
+        yLabel: 'value',
+        zoomToFit: true,
+        height: 400,
+      };
+      let label = '';
+      for (let i = 0; i < series.length; i++) {
+        const key = series[i];
+        label += `${key}: `;
+        const values = data.values[i].map(item => item.y);
+        const min = Math.min(...values);
+        label += `min: ${round(min)}, `;
+        const max = Math.max(...values);
+        label += `max: ${round(max)}, `;
+        const delta = max - min;
+        label += `delta: ${round(delta, 1000000)}, `;
+        label += '<br/>';
+      }
+      document.getElementById(`label${i}`).innerHTML = `${parameter}<br/>${label}`;
+      await tfvis.render.linechart(document.getElementById(`plot${i}`), data, opts);
+    } else {
+      console.log(`could not read ${filePath}`);
     }
-
-    const series = ['correct alignments', 'partial alignments', 'error'];
-    const data = { values: [correctSeries, partialSeries, errorSeries], series};
-    const opts = { xLabel: parameter, yLabel: 'value', yAxisDomain: [0, 1.1]};
-    const surface = { name: `Visualizing effects of changes to '${parameter}'`, tab: `Optimizing ${parameter}`};
-    await tfvis.render.linechart(surface, data, opts);
+  }
 }
 
 // document.addEventListener("DOMContentLoaded", lrRun);

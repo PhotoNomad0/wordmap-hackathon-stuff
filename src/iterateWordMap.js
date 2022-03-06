@@ -18,12 +18,12 @@ const alignment_data = require("./resources/alignments_for_eph.json");
  *         "lemmaAlignmentOccurrences": 0.4,
  *         "uniqueness": 0.5,
  *         "lemmaUniqueness": 0.5,
- * 
+ *
  *         "sourceCorpusPermutationsFrequencyRatio": 0.7,
  *         "sourceCorpusLemmaPermutationsFrequencyRatio": 0.7,
  *         "targetCorpusPermutationsFrequencyRatio": 0.7,
  *         "targetCorpusLemmaPermutationsFrequencyRatio": 0.7,
- * 
+ *
  *         "sourceAlignmentMemoryFrequencyRatio": 0.8,
  *         "sourceAlignmentMemoryLemmaFrequencyRatio": 0.7,
  *         "targetAlignmentMemoryFrequencyRatio": 0.7,
@@ -31,7 +31,7 @@ const alignment_data = require("./resources/alignments_for_eph.json");
  *     };
  */
 
-const initialEngineWeights = {
+export const initialEngineWeights = {
   "alignmentPosition": 0.7,
   "ngramLength": 0.2,
   "characterLength": 0.3,
@@ -90,7 +90,7 @@ export async function doWordMapIterations() {
     engineWeights: initialEngineWeights,
   };
   const {target, source} = await loadTargetAndSource('.', bookId, chapterCount);
-  
+
   function wordMapErrorFunction(alignmentPosition, pass) {
     const results = iterateWordMap(target, source, bookId, chapterCount, wordMapOpts, pass);
     const wordMapResults = {
@@ -102,7 +102,7 @@ export async function doWordMapIterations() {
   }
 
   await lrRun(passes, wordMapErrorFunction, wordMapOpts.engineWeights.alignmentPosition);
-  
+
   console.log("DONE");
 }
 
