@@ -1,7 +1,7 @@
 {
-  "name": "wordmap-tuning",
+  "name": "wordmap-tuning-plotting",
   "version": "1.0.0",
-  "description": "WordMap Tuning",
+  "description": "WordMap Tuning Plotting",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
