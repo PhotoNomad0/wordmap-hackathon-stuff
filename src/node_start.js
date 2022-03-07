@@ -3,6 +3,8 @@ const fs = require('fs-extra');
 const path = require('path-extra');
 const {doWordMapIterations, elapsedSecs, initialEngineWeights, indexFolder} = require("./iterateWordMap");
 
+const args = process.argv.slice(2);
+
 function saveIndex(folderPath) {
   const index = indexFolder(folderPath);
   fs.writeJsonSync(path.join(folderPath, 'index.json'), index);

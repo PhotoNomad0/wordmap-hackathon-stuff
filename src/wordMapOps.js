@@ -261,7 +261,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
       }
     }
 
-    totalMismatches += notMatchedSuggestionLen + notMatchedAlignment.length;
+    totalMismatches += notMatchedAlignment.length;
   }
   const results = {verseCount: totalCorpus, totalMismatches, partialMatches, partialRatioMatches, totalAlignments, correctMatches};
   return results;
