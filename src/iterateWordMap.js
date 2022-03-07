@@ -90,10 +90,10 @@ export function indexFolder(folderPath) {
   return null;
 }
 
-function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, pass) {
+function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, pass, doAlignments) {
   let start = new Date();
   const map = new WordMap(wordMapOpts);
-  if (alignment_data) {
+  if (alignment_data && doAlignments) {
     initAlignmentMemory(map, alignment_data);
   }
   const corpus = initCorpusFromTargetAndSource(chapterCount, target, source, map, bookId);
@@ -168,12 +168,12 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
     engineWeights: initialEngineWeights,
   };
   const {target, source} = loadTargetAndSource('./public', bookId, chapterCount);
-  const alignment_data = doAlignments ? fs.readJsonSync("./src/resources/alignments_for_eph.json") : null;
+  const alignment_data = fs.readJsonSync("./src/resources/alignments_for_eph.json");
 
   function wordMapErrorFunction(parameter, value) {
     const opts = _.cloneDeep(wordMapOpts); // initialize to defaults
     opts.engineWeights[parameter] = value; // set value for test parameter
-    const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, opts, value);
+    const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, opts, value, doAlignments);
     const wordMapResults = {
       ...results,
       doAlignments,
