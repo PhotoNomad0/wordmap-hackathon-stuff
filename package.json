@@ -11,7 +11,8 @@
     "eject": "react-scripts eject",
     "compile": "babel ./src --out-dir ./dist -s inline",
     "iterate-debug": "yarn run compile && node --inspect-brk ./dist/node_start.js",
-    "iterate": "yarn run compile && node ./dist/node_start.js"
+    "iterate": "yarn run compile && node ./dist/node_start.js",
+    "index_data": "yarn run compile && node ./dist/node_start.js --index_only"
   },
   "dependencies": {
     "@tensorflow/tfjs": "3.13.0",
