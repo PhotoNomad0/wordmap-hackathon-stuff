@@ -58,7 +58,7 @@ function round(num, mult = 10000) {
 }
 
 export async function plotWordMapData() {
-  document.getElementById(`header`).innerHTML = `Word Map Tuning for Ephesians`;
+  document.getElementById(`header`).innerHTML = `Word Map Tuning for Luke`;
   const langId = 'en';
   const engineWeights = Object.keys(initialEngineWeights).sort();
   const parameter = '-';
@@ -102,21 +102,28 @@ export async function plotWordMapData() {
         zoomToFit: true,
         height: 400,
       };
-      let label = '';
+      const style = 'style="border: 1px solid black;border-collapse: collapse; margin-left: auto; margin-right: auto;"';
+      let label = `<table ${style}><tr ${style}>`;
+      const headers = ['value', 'min', 'max', 'delta'];
+      for (const header of headers) {
+        label += `<th ${style}>${header}</th>`;
+      }
+      label += `</tr>`;
       for (let i = 0; i < series.length; i++) {
+        label += `<tr ${style}>`;
         const key = series[i];
-        label += `${key}: `;
+        label += `<td ${style}>${key}:</td> `;
         const values = data.values[i].map(item => item.y);
         const min = Math.min(...values);
-        label += `min: ${round(min)}, `;
+        label += `<td ${style}>${round(min)}</td> `;
         const max = Math.max(...values);
-        label += `max: ${round(max)}, `;
+        label += `<td ${style}>${round(max)}</td> `;
         const delta = max - min;
-        label += `delta: ${round(delta, 1000000)}, `;
-        label += '<br/>';
+        label += `<td ${style}>${round(delta, 1000000)}</td> `;
+        label += `</tr>`
       }
-      label += '<br/><br/><br/>';
-      document.getElementById(`label${i}`).innerHTML = `${parameter}<br/>${label}`;
+      label += '</table>';
+      document.getElementById(`label${i}`).innerHTML = `<br/><div>${parameter}</div>${label}<br/><br/>`;
       await tfvis.render.linechart(document.getElementById(`plot${i}`), data, opts);
     } else {
       console.log(`could not read ${filePath}`);
