@@ -65,7 +65,7 @@ export async function plotWordMapData() {
   const surface = {name: `Visualizing effects of changes to`, tab: `Optimizing`};
   for (let i = 0; i < engineWeights.length; i++ ) {
     const parameter= engineWeights[i];
-    const filePath = `./analysisData/${langId}/${parameter}.json`;
+    const filePath = `./analysisData/${langId}/withAlignment_luk/${parameter}.json`;
     const history = await getJsonFile(filePath);
     if (history) {
       // build chart
