@@ -9,9 +9,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "compile": "babel ./src --out-dir ./dist -s inline",
+    "compile": "rm -rf dist && babel ./src --out-dir ./dist -s inline",
+    "compile-prod": "rm -rf dist && babel ./src --out-dir ./dist",
     "iterate-debug": "yarn run compile && node --inspect-brk ./dist/node_start.js",
-    "iterate": "yarn run compile && node ./dist/node_start.js",
+    "iterate": "yarn run compile-prod && node ./dist/node_start.js",
     "index_data": "yarn run compile && node ./dist/node_start.js --index_only"
   },
   "dependencies": {
