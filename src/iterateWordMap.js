@@ -158,9 +158,9 @@ export function loadTargetAndSource(baseFolder, bookId, chapterCount) {
 }
 
 export async function doWordMapIterations(parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
-  const chapterCount = 24;
-  const doAlignments = false;
-  const bookId = 'luk';
+  const chapterCount = 6;
+  const doAlignments = true;
+  const bookId = 'eph';
   const recording = [];
   const wordMapOpts = {
     targetNgramLength: 5,
