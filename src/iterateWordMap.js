@@ -104,6 +104,7 @@ function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wo
   const error_sq = error * error;
   const data = {
     pass,
+    date: end.toISOString(),
     error,
     error_sq,
     ...results,
