@@ -164,7 +164,7 @@ function doPartialMatch(alignment, suggestion) {
       partialMatch = true;
     }
   }
-  const partialRatio = (sourceMatches/aNgrams.sourceNgram.length) * (targetMatches/aNgrams.targetNgram.length);
+  const partialRatio = (sourceMatches/(aNgrams.sourceNgram.length || 1)) * (targetMatches/(aNgrams.targetNgram.length || 1));
   return { partialRatio, partialMatch};
 }
 
@@ -236,7 +236,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
       let partialRatio = 0;
       const matchIndex = notMatchedSuggestion.findIndex(suggestion => {
         const { partialRatio: partialRatio_, partialMatch} = doPartialMatch(alignment, suggestion);
-        if (partialMatch) {
+        if (partialMatch && partialRatio_) {
           partialRatio = partialRatio_;
         }
         return partialMatch;
