@@ -200,8 +200,9 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
   let totalMismatches = 0;
   let partialMatches = 0;
   let partialRatioMatches = 0;
-  let totalCorpus = -1;
-  let totalAlignments = -1;
+  let totalCorpus = 0;
+  let totalAlignments = 0;
+  let totalSuggestions = 0;
   let correctMatches = 0;
   for (const c of corpus) {
     totalCorpus++;
@@ -211,6 +212,7 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
     let notMatchedSuggestion = [...suggestions];
     verbose && console.log(`alignments.length: ${alignments.length}`);
     verbose && console.log(`suggestions.length: ${suggestions.length}`);
+    totalSuggestions += suggestions.length;
     let suggestionMisCount = 0;
     let notMatchedAlignment = [];
     for (let i = 0; i < alignments.length; i++) {
@@ -263,7 +265,15 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
 
     totalMismatches += notMatchedAlignment.length;
   }
-  const results = {verseCount: totalCorpus, totalMismatches, partialMatches, partialRatioMatches, totalAlignments, correctMatches};
+  const results = {
+    verseCount: totalCorpus,
+    totalMismatches,
+    partialMatches,
+    partialRatioMatches,
+    totalAlignments,
+    correctMatches,
+    totalSuggestions,
+  };
   return results;
 }
 
