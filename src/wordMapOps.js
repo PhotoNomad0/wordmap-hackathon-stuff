@@ -209,6 +209,9 @@ export function predictCorpus(map, corpus, alignment_data, verbose = false) {
     verbose && console.log(`${totalCorpus} - corpus`, JSON.stringify(c));
     const suggestions = getSuggestions(map, c.sourceVerse, c.targetVerse) || [];
     const alignments = alignmentsByVerse?.[c.reference.chapter]?.[c.reference.verse] || [];
+    if (!alignments?.length) {
+      console.log(`could not find alignments for ${c.reference.chapter}:${c.reference.verse}`);
+    }
     let notMatchedSuggestion = [...suggestions];
     verbose && console.log(`alignments.length: ${alignments.length}`);
     verbose && console.log(`suggestions.length: ${suggestions.length}`);

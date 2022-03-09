@@ -169,7 +169,7 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
     engineWeights: initialEngineWeights,
   };
   const {target, source} = loadTargetAndSource('./public', bookId, chapterCount);
-  const alignment_data = fs.readJsonSync("./src/resources/alignments_for_eph.json");
+  const alignment_data = fs.readJsonSync(`./src/resources/alignments_for_${bookId}.json`);
 
   function wordMapErrorFunction(parameter, value) {
     const opts = _.cloneDeep(wordMapOpts); // initialize to defaults
