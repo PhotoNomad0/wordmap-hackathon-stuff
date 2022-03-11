@@ -149,16 +149,16 @@ function getBibleContent(folder, chapterCount) {
   return target;
 }
 
-export function loadTargetAndSource(baseFolder, bookId, chapterCount) {
+export function loadTargetAndSource(baseFolder, bookId, chapterCount, targetLang = 'en') {
   if (baseFolder) {
-    const target = getBibleContent(`${baseFolder}/en/${bookId}`, chapterCount);
+    const target = getBibleContent(`${baseFolder}/${targetLang}/${bookId}`, chapterCount);
     const source = getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
     return {target, source};
   }
   return {};
 }
 
-export async function doWordMapIterations(parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
+export async function doWordMapIterations(targetLang, parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
   const chapterCount = 24;
   const doAlignments = false;
   const bookId = 'luk';
@@ -168,7 +168,7 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
     warnings: false,
     engineWeights: initialEngineWeights,
   };
-  const {target, source} = loadTargetAndSource('./public', bookId, chapterCount);
+  const {target, source} = loadTargetAndSource('./public', bookId, chapterCount, targetLang);
   const alignment_data = fs.readJsonSync(`./src/resources/alignments_for_${bookId}.json`);
 
   function wordMapErrorFunction(parameter, value) {
@@ -179,6 +179,7 @@ export async function doWordMapIterations(parameter = 'alignmentPosition', start
       ...results,
       doAlignments,
       bookId,
+      targetLang,
       parameter,
       [parameter]: value,
       parameterInitial: wordMapOpts.engineWeights[parameter],

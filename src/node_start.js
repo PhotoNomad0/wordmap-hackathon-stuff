@@ -11,10 +11,10 @@ function saveIndex(folderPath) {
   fs.writeJsonSync(path.join(folderPath, 'index.json'), index);
 }
 
-async function doParameterAnalysis(parameter, start, end, stepSize, targetLang) {
+async function doParameterAnalysis(targetLang, parameter, start, end, stepSize) {
   const startTime = new Date();
   console.log(`testing '${parameter}'`);
-  const results = await doWordMapIterations(parameter, start, end, stepSize);
+  const results = await doWordMapIterations(targetLang, parameter, start, end, stepSize);
   const outputFolder = path.join('./public/analysisData', targetLang);
   fs.ensureDirSync(outputFolder);
   fs.writeJsonSync(path.join(outputFolder, `${parameter}.json`), results);
@@ -30,7 +30,7 @@ async function doRun() {
   const engineWeights = Object.keys(initialEngineWeights).sort();
   for (const parameter of engineWeights) {
     const start = 0, end = 1.51, stepSize = 0.1;
-    await doParameterAnalysis(parameter, start, end, stepSize, targetLang);
+    await doParameterAnalysis(targetLang, parameter, start, end, stepSize);
   }
   const endTime = new Date();
   const elapsedSecs_ = elapsedSecs(startTime, endTime);
