@@ -90,13 +90,13 @@ export function indexFolder(folderPath) {
   return null;
 }
 
-function iterateWordMap(alignment_data, target, source, bookId, chapterCount, wordMapOpts, pass, doAlignments) {
+function iterateWordMap(alignment_data, target, source, wordMapOpts, pass, doAlignments) {
   let start = new Date();
   const map = new WordMap(wordMapOpts);
   if (alignment_data && doAlignments) {
     initAlignmentMemory(map, alignment_data);
   }
-  const corpus = initCorpusFromTargetAndSource(chapterCount, target, source, map, bookId);
+  const corpus = initCorpusFromTargetAndSource(target, source, map);
   const results = predictCorpus(map, corpus, alignment_data);
   let end = new Date();
   const elapsedSecs_ = elapsedSecs(start, end);
@@ -119,12 +119,17 @@ export function elapsedSecs(start, end) {
   return wordMapTime;
 }
 
-function getBibleContent(folder, chapterCount) {
-  const target = {};
-  for (let chapter = 1; chapter <= chapterCount; chapter++) {
-    const targetChapter = {};
-    const targetChapterPath = `${folder}/${chapter}.json`;
-    const verses = fs.readJsonSync(targetChapterPath);
+function getBibleContent(folder) {
+  const content = {};
+  for (let chapter = 1; chapter <= 200; chapter++) {
+    const chapterData = {};
+    const chapterPath = `${folder}/${chapter}.json`;
+
+    if (!fs.pathExistsSync(chapterPath)) {
+      break;
+    }
+
+    const verses = fs.readJsonSync(chapterPath);
 
     for (const verse of Object.keys(verses)) {
       let verseData = verses[verse];
@@ -142,26 +147,61 @@ function getBibleContent(folder, chapterCount) {
         verseStr = verseData;
       }
       verseStr = removeMarker(verseStr).trim().replaceAll('\n', ' ');
-      targetChapter[verse] = verseStr;
+      chapterData[verse] = verseStr;
     }
-    target[chapter] = targetChapter;
+    content[chapter] = chapterData;
   }
-  return target;
+  return content;
+}
+
+function getBibleContentFromArray(baseFolder, targetLang, bookId) {
+  const books = toStrArray(bookId);
+  const content = { };
+  for (const bookId of books) {
+    const content_ = getBibleContent(`${baseFolder}/${targetLang}/${bookId}`);
+    content[bookId] = content_;
+  }
+  return content;
 }
 
 export function loadTargetAndSource(baseFolder, bookId, chapterCount, targetLang = 'en') {
   if (baseFolder) {
-    const target = getBibleContent(`${baseFolder}/${targetLang}/${bookId}`, chapterCount);
-    const source = getBibleContent(`${baseFolder}/ugnt/${bookId}`, chapterCount);
+    const target = getBibleContentFromArray(baseFolder, targetLang, bookId);
+    const source = getBibleContentFromArray(baseFolder, 'ugnt',bookId);
     return {target, source};
   }
   return {};
 }
 
+export function toStrArray(prop) {
+  if (Array.isArray(prop)) {
+    return prop;
+  }
+  return [prop]; // make a single entry array
+}
+
+export function arrayToStr(prop) {
+  if (Array.isArray(prop)) {
+    return prop.join(',');
+  }
+  return prop.toString();
+}
+
+function getAlignmentsForTarget(targetLang, bookId) {
+  const books = toStrArray(bookId);
+  let alignment_data = [ ];
+  for (const bookId of books) {
+    const alignmentDataPath = `./src/resources/${targetLang}/alignments_for_${bookId}.json`;
+    const alignment_data_ = fs.readJsonSync(alignmentDataPath);
+    alignment_data = alignment_data.concat(alignment_data_);
+  }
+  return alignment_data;
+}
+
 export async function doWordMapIterations(targetLang, parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
   const chapterCount = 24;
-  const doAlignments = false;
-  const bookId = 'luk';
+  const doAlignments = true;
+  const bookId = ['luk', 'eph'];
   const recording = [];
   const wordMapOpts = {
     targetNgramLength: 5,
@@ -169,12 +209,12 @@ export async function doWordMapIterations(targetLang, parameter = 'alignmentPosi
     engineWeights: initialEngineWeights,
   };
   const {target, source} = loadTargetAndSource('./public', bookId, chapterCount, targetLang);
-  const alignment_data = fs.readJsonSync(`./src/resources/alignments_for_${bookId}.json`);
+  const alignment_data = getAlignmentsForTarget(targetLang, bookId);
 
   function wordMapErrorFunction(parameter, value) {
     const opts = _.cloneDeep(wordMapOpts); // initialize to defaults
     opts.engineWeights[parameter] = value; // set value for test parameter
-    const results = iterateWordMap(alignment_data, target, source, bookId, chapterCount, opts, value, doAlignments);
+    const results = iterateWordMap(alignment_data, target, source, opts, value, doAlignments);
     const wordMapResults = {
       ...results,
       doAlignments,
