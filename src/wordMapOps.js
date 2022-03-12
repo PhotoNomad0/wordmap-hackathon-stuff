@@ -50,6 +50,9 @@ export function getAlignmentsByVerse(alignment_data) {
   const alignmentsByBook = {};
   for (const a of alignment_data) {
     const reference = a.reference;
+    if (!reference) {
+      console.log('stugg');
+    }
     let bookAlign = alignmentsByBook[reference.bookId];
     if (!bookAlign) {
       bookAlign = {};
