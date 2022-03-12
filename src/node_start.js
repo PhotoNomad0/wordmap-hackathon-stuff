@@ -19,7 +19,7 @@ async function doParameterAnalysis(targetLang, parameter, start, end, stepSize) 
   const bookStr = arrayToStr(books);
   const doAlignments = results[0].doAlignments;
   const alignmentStr = doAlignments ? 'withAlignment_' : 'withoutAlignment_';
-  const outputFolder = path.join('./public/analysisData', `${alignmentStr}${targetLang}`, bookStr);
+  const outputFolder = path.join('./public/analysisData', targetLang, `${alignmentStr}${bookStr}`);
   fs.ensureDirSync(outputFolder);
   fs.writeJsonSync(path.join(outputFolder, `${parameter}.json`), results);
   const endTime = new Date();
