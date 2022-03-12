@@ -1,0 +1,5741 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38700",
+        "lemma": "παρακαλέω",
+        "morph": "Gr,V,IPA1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρακαλῶ",
+        "children": [
+          {
+            "text": "मैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "आग्रह",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "करता",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "हूंँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37670",
+        "lemma": "οὖν",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὖν",
+        "children": [
+          {
+            "text": "इसलिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,RI,,,,GNP,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "πάντων",
+        "children": [
+          {
+            "text": "सबसे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G44120",
+        "lemma": "πρῶτον",
+        "morph": "Gr,D,,,,,,,,S",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πρῶτον",
+        "children": [
+          {
+            "text": "पहले",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,GMP,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "πάντων",
+        "children": [
+          {
+            "text": "सभी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04440",
+        "lemma": "ἄνθρωπος",
+        "morph": "Gr,N,,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀνθρώπων",
+        "children": [
+          {
+            "text": "मनुष्यों",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52280",
+        "lemma": "ὑπέρ",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπὲρ",
+        "children": [
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "लिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11620",
+        "lemma": "δέησις",
+        "morph": "Gr,N,,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δεήσεις",
+        "children": [
+          {
+            "text": "अनुरोध",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G43350",
+        "lemma": "προσευχή",
+        "morph": "Gr,N,,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "προσευχάς",
+        "children": [
+          {
+            "text": "प्रार्थनाएँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17830",
+        "lemma": "ἔντευξις",
+        "morph": "Gr,N,,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐντεύξεις",
+        "children": [
+          {
+            "text": "निवेदन",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G21690",
+        "lemma": "εὐχαριστία",
+        "morph": "Gr,N,,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εὐχαριστίας",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "धन्यवाद",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41600",
+        "lemma": "ποιέω",
+        "morph": "Gr,V,NPP,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ποιεῖσθαι",
+        "children": [
+          {
+            "text": "किए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "जाएँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G09350",
+        "lemma": "βασιλεύς",
+        "morph": "Gr,N,,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "βασιλέων",
+        "children": [
+          {
+            "text": "राजाओं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52280",
+        "lemma": "ὑπέρ",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπὲρ",
+        "children": [
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "लिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάντων",
+        "children": [
+          {
+            "text": "सभी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RR,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῶν",
+        "children": [
+          {
+            "text": "जो",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52470",
+        "lemma": "ὑπεροχή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπεροχῇ",
+        "children": [
+          {
+            "text": "अधिकार",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52470",
+        "lemma": "ὑπεροχή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπεροχῇ",
+        "children": [
+          {
+            "text": "हैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "ताकि",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12360",
+        "lemma": "διάγω",
+        "morph": "Gr,V,SPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διάγωμεν",
+        "children": [
+          {
+            "text": "हम",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάσῃ",
+        "children": [
+          {
+            "text": "सारी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G21500",
+        "lemma": "εὐσέβεια",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εὐσεβείᾳ",
+        "children": [
+          {
+            "text": "भक्ति",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G45870",
+        "lemma": "σεμνότης",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σεμνότητι",
+        "children": [
+          {
+            "text": "आत्म",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": "-"
+          },
+          {
+            "text": "सम्मान",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15100",
+        "lemma": "εἰμί",
+        "morph": "Gr,V,PPA,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὄντων",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24430",
+        "lemma": "ἵνα",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἵνα",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G22630",
+        "lemma": "ἤρεμος",
+        "morph": "Gr,AA,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἤρεμον",
+        "children": [
+          {
+            "text": "शांतिपूर्ण",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 3,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G22720",
+        "lemma": "ἡσύχιος",
+        "morph": "Gr,AA,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡσύχιον",
+        "children": [
+          {
+            "text": "शांत",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G09790",
+        "lemma": "βίος",
+        "morph": "Gr,N,,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "βίον",
+        "children": [
+          {
+            "text": "जीवन",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12360",
+        "lemma": "διάγω",
+        "morph": "Gr,V,SPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διάγωμεν",
+        "children": [
+          {
+            "text": "जी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "सकें",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37780",
+        "lemma": "οὗτος",
+        "morph": "Gr,RD,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦτο",
+        "children": [
+          {
+            "text": "यह",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14730",
+        "lemma": "ἐγώ",
+        "morph": "Gr,RP,,,1G,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡμῶν",
+        "children": [
+          {
+            "text": "हमारे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G49900",
+            "lemma": "σωτήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Σωτῆρος",
+            "children": [
+              {
+                "text": "उद्धारकर्ता",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23160",
+        "lemma": "θεός",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Θεοῦ",
+        "children": [
+          {
+            "text": "परमेश्वर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05870",
+        "lemma": "ἀπόδεκτος",
+        "morph": "Gr,NS,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπόδεκτον",
+        "children": [
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17990",
+        "lemma": "ἐνώπιον",
+        "morph": "Gr,PI,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐνώπιον",
+        "children": [
+          {
+            "text": "सामने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25700",
+        "lemma": "καλός",
+        "morph": "Gr,NS,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καλὸν",
+        "children": [
+          {
+            "text": "अच्छा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05870",
+        "lemma": "ἀπόδεκτος",
+        "morph": "Gr,NS,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπόδεκτον",
+        "children": [
+          {
+            "text": "स्वीकार्य",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G49900",
+            "lemma": "σωτήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Σωτῆρος",
+            "children": [
+              {
+                "text": "है",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37390",
+        "lemma": "ὅς",
+        "morph": "Gr,RR,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὃς",
+        "children": [
+          {
+            "text": "जो",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάντας",
+        "children": [
+          {
+            "text": "सभी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04440",
+        "lemma": "ἄνθρωπος",
+        "morph": "Gr,N,,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀνθρώπους",
+        "children": [
+          {
+            "text": "मनुष्यों",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G49820",
+        "lemma": "σῴζω",
+        "morph": "Gr,V,NAP,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σωθῆναι",
+        "children": [
+          {
+            "text": "उद्धार",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02250",
+        "lemma": "ἀλήθεια",
+        "morph": "Gr,N,,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀληθείας",
+        "children": [
+          {
+            "text": "सच्चाई",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G19220",
+        "lemma": "ἐπίγνωσις",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπίγνωσιν",
+        "children": [
+          {
+            "text": "ज्ञान",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20640",
+        "lemma": "ἔρχομαι",
+        "morph": "Gr,V,NAA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐλθεῖν",
+        "children": [
+          {
+            "text": "आने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "की",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23090",
+        "lemma": "θέλω",
+        "morph": "Gr,V,IPA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "θέλει",
+        "children": [
+          {
+            "text": "इच्छा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "रखता",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "है",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " । \n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "क्योंकि",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "यहाँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15200",
+        "lemma": "εἷς",
+        "morph": "Gr,EN,,,,NMS,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "εἷς",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23160",
+        "lemma": "θεός",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Θεός",
+        "children": [
+          {
+            "text": "परमेश्वर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "है",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15200",
+        "lemma": "εἷς",
+        "morph": "Gr,EN,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "εἷς",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33160",
+        "lemma": "μεσίτης",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μεσίτης",
+        "children": [
+          {
+            "text": "बिचवई",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23160",
+        "lemma": "θεός",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Θεοῦ",
+        "children": [
+          {
+            "text": "परमेश्वर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04440",
+        "lemma": "ἄνθρωπος",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἄνθρωπος",
+        "children": [
+          {
+            "text": "मनुष्य",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "का",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " - "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04440",
+        "lemma": "ἄνθρωπος",
+        "morph": "Gr,N,,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀνθρώπων",
+        "children": [
+          {
+            "text": "पुरूष",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24240",
+        "lemma": "Ἰησοῦς",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Ἰησοῦς",
+        "children": [
+          {
+            "text": "यीशु",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55470",
+        "lemma": "χριστός",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Χριστὸς",
+        "children": [
+          {
+            "text": "मसीह",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁ",
+        "children": [
+          {
+            "text": "उसने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14380",
+        "lemma": "ἑαυτοῦ",
+        "morph": "Gr,RE,,,3AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἑαυτὸν",
+        "children": [
+          {
+            "text": "स्वयं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "को",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,RI,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάντων",
+        "children": [
+          {
+            "text": "सभी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52280",
+        "lemma": "ὑπέρ",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπὲρ",
+        "children": [
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "लिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04870",
+        "lemma": "ἀντίλυτρον",
+        "morph": "Gr,N,,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀντίλυτρον",
+        "children": [
+          {
+            "text": "फिरौती",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "रूप",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G13250",
+        "lemma": "δίδωμι",
+        "morph": "Gr,V,PAA,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δοὺς",
+        "children": [
+          {
+            "text": "दे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "दिया",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23980",
+        "lemma": "ἴδιος",
+        "morph": "Gr,EF,,,,DMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἰδίοις",
+        "children": [
+          {
+            "text": "सही",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25400",
+        "lemma": "καιρός",
+        "morph": "Gr,N,,,,,DMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καιροῖς",
+        "children": [
+          {
+            "text": "समय",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "पर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G31420",
+            "lemma": "μαρτύριον",
+            "morph": "Gr,N,,,,,NNS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "μαρτύριον",
+            "children": [
+              {
+                "text": "गवाही",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "के",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 3,
+                "occurrences": 3
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "रूप",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "में",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37390",
+        "lemma": "ὅς",
+        "morph": "Gr,RR,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὃ",
+        "children": [
+          {
+            "text": "जिसके",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "लिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14730",
+        "lemma": "ἐγώ",
+        "morph": "Gr,RP,,,1N,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐγὼ",
+        "children": [
+          {
+            "text": "मैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G27830",
+        "lemma": "κῆρυξ",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "κῆρυξ",
+        "children": [
+          {
+            "text": "स्वयं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "अग्रदूत",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G50870",
+        "lemma": "τίθημι",
+        "morph": "Gr,V,IAP1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐτέθην",
+        "children": [
+          {
+            "text": "बनाया",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "गया",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "था",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G06520",
+        "lemma": "ἀπόστολος",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπόστολος",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "प्रेरित",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " - "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02250",
+        "lemma": "ἀλήθεια",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλήθειαν",
+        "children": [
+          {
+            "text": "मैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55470",
+        "lemma": "χριστός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Χριστῷ",
+        "children": [
+          {
+            "text": "मसीह",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02250",
+        "lemma": "ἀλήθεια",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλήθειαν",
+        "children": [
+          {
+            "text": "सच",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "कह",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "रहा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G27830",
+        "lemma": "κῆρυξ",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "κῆρυξ",
+        "children": [
+          {
+            "text": "हूँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30040",
+        "lemma": "λέγω",
+        "morph": "Gr,V,IPA1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λέγω",
+        "children": [
+          {
+            "text": "मैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55740",
+        "lemma": "ψεύδομαι",
+        "morph": "Gr,V,IPM1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ψεύδομαι",
+        "children": [
+          {
+            "text": "झूठ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐ",
+        "children": [
+          {
+            "text": "नहीं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30040",
+        "lemma": "λέγω",
+        "morph": "Gr,V,IPA1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λέγω",
+        "children": [
+          {
+            "text": "बोल",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "रहा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02250",
+        "lemma": "ἀλήθεια",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλήθειαν",
+        "children": [
+          {
+            "text": "हूँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " - "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41020",
+        "lemma": "πίστις",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πίστει",
+        "children": [
+          {
+            "text": "विश्वास",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02250",
+        "lemma": "ἀλήθεια",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀληθείᾳ",
+        "children": [
+          {
+            "text": "सच्चाई",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14840",
+        "lemma": "ἔθνος",
+        "morph": "Gr,N,,,,,GNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐθνῶν",
+        "children": [
+          {
+            "text": "अन्यजातियों",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02250",
+        "lemma": "ἀλήθεια",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀληθείᾳ",
+        "children": [
+          {
+            "text": "का",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G13200",
+        "lemma": "διδάσκαλος",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διδάσκαλος",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "शिक्षक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37670",
+        "lemma": "οὖν",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὖν",
+        "children": [
+          {
+            "text": "इसलिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10140",
+        "lemma": "βούλομαι",
+        "morph": "Gr,V,IPM1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "βούλομαι",
+        "children": [
+          {
+            "text": "मैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "चाहता",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "हूंँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "कि",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοὺς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G04350",
+            "lemma": "ἀνήρ",
+            "morph": "Gr,N,,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἄνδρας",
+            "children": [
+              {
+                "text": "पुरूष",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παντὶ",
+        "children": [
+          {
+            "text": "हर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G51170",
+        "lemma": "τόπος",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τόπῳ",
+        "children": [
+          {
+            "text": "स्थान",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "पर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G43360",
+        "lemma": "προσεύχομαι",
+        "morph": "Gr,V,NPM,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "προσεύχεσθαι",
+        "children": [
+          {
+            "text": "प्रार्थना",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "करें",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37090",
+        "lemma": "ὀργή",
+        "morph": "Gr,N,,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὀργῆς",
+        "children": [
+          {
+            "text": "क्रोध",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "या",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12610",
+        "lemma": "διαλογισμός",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διαλογισμοῦ",
+        "children": [
+          {
+            "text": "बहस",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55650",
+        "lemma": "χωρίς",
+        "morph": "Gr,PI,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "χωρὶς",
+        "children": [
+          {
+            "text": "बिना",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37410",
+        "lemma": "ὅσιος",
+        "morph": "Gr,AA,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁσίους",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G54950",
+            "lemma": "χείρ",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "χεῖρας",
+            "children": [
+              {
+                "text": "पवित्र",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "हाथ",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G18690",
+        "lemma": "ἐπαίρω",
+        "morph": "Gr,V,PPA,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπαίροντας",
+        "children": [
+          {
+            "text": "उठाते",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37410",
+        "lemma": "ὅσιος",
+        "morph": "Gr,AA,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁσίους",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G54950",
+            "lemma": "χείρ",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "χεῖρας",
+            "children": [
+              {
+                "text": "हुए",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G56150",
+        "lemma": "ὡσαύτως",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὡσαύτως",
+        "children": [
+          {
+            "text": "वैसे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "ही",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11350",
+        "lemma": "γυνή",
+        "morph": "Gr,N,,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γυναῖκας",
+        "children": [
+          {
+            "text": "स्त्रियाँ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "भी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G01270",
+        "lemma": "αἰδώς",
+        "morph": "Gr,N,,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αἰδοῦς",
+        "children": [
+          {
+            "text": "संकोच",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G49970",
+        "lemma": "σωφροσύνη",
+        "morph": "Gr,N,,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σωφροσύνης",
+        "children": [
+          {
+            "text": "संयम",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33260",
+        "lemma": "μετά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μετὰ",
+        "children": [
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "साथ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G28870",
+        "lemma": "κόσμιος",
+        "morph": "Gr,AA,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "κοσμίῳ",
+        "children": [
+          {
+            "text": "उचित",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G26890",
+        "lemma": "καταστολή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καταστολῇ",
+        "children": [
+          {
+            "text": "वस्त्रों",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "से",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14380",
+        "lemma": "ἑαυτοῦ",
+        "morph": "Gr,RE,,,3AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἑαυτάς",
+        "children": [
+          {
+            "text": "अपने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "आप",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "को",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G28850",
+        "lemma": "κοσμέω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "κοσμεῖν",
+        "children": [
+          {
+            "text": "संवारे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,DO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "न",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "कि",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G41170",
+            "lemma": "πλέγμα",
+            "morph": "Gr,N,,,,,DNP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "πλέγμασιν",
+            "children": [
+              {
+                "text": "बाल",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "गूँथने",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55570",
+        "lemma": "χρυσός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "χρυσῷ",
+        "children": [
+          {
+            "text": "सोना",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G22280",
+        "lemma": "ἤ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "ἢ",
+        "children": [
+          {
+            "text": "या",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G31350",
+        "lemma": "μαργαρίτης",
+        "morph": "Gr,N,,,,,DMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μαργαρίταις",
+        "children": [
+          {
+            "text": "मोती",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G22280",
+        "lemma": "ἤ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "ἢ",
+        "children": [
+          {
+            "text": "या",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41850",
+        "lemma": "πολυτελής",
+        "morph": "Gr,AA,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πολυτελεῖ",
+        "children": [
+          {
+            "text": "महंगे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24410",
+        "lemma": "ἱματισμός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἱματισμῷ",
+        "children": [
+          {
+            "text": "कपड़े",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", \n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02350",
+        "lemma": "ἀλλά",
+        "morph": "Gr,CO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλλ’",
+        "children": [
+          {
+            "text": "परन्तु",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11350",
+        "lemma": "γυνή",
+        "morph": "Gr,N,,,,,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γυναιξὶν",
+        "children": [
+          {
+            "text": "स्त्रियों",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "लिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37390",
+        "lemma": "ὅς",
+        "morph": "Gr,RR,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὃ",
+        "children": [
+          {
+            "text": "जो",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G42410",
+        "lemma": "πρέπω",
+        "morph": "Gr,V,IPA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πρέπει",
+        "children": [
+          {
+            "text": "उचित",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "है",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G18610",
+        "lemma": "ἐπαγγέλλω",
+        "morph": "Gr,V,PPM,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπαγγελλομέναις",
+        "children": [
+          {
+            "text": "जो",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00180",
+        "lemma": "ἀγαθός",
+        "morph": "Gr,AA,,,,GNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀγαθῶν",
+        "children": [
+          {
+            "text": "अच्छे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20410",
+        "lemma": "ἔργον",
+        "morph": "Gr,N,,,,,GNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔργων",
+        "children": [
+          {
+            "text": "कामों",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12230",
+        "lemma": "διά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δι’",
+        "children": [
+          {
+            "text": "द्वारा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23170",
+        "lemma": "θεοσέβεια",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "θεοσέβειαν",
+        "children": [
+          {
+            "text": "भक्ति",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G18610",
+        "lemma": "ἐπαγγέλλω",
+        "morph": "Gr,V,PPM,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπαγγελλομέναις",
+        "children": [
+          {
+            "text": "करती",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "हैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11350",
+        "lemma": "γυνή",
+        "morph": "Gr,N,,,,,NFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γυνὴ",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "स्त्री",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "को",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G22710",
+            "lemma": "ἡσυχία",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἡσυχίᾳ",
+            "children": [
+              {
+                "text": "चुपचाप",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G31290",
+        "lemma": "μανθάνω",
+        "morph": "Gr,V,MPA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μανθανέτω",
+        "children": [
+          {
+            "text": "सीखना",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "चाहिए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάσῃ",
+        "children": [
+          {
+            "text": "सारी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52920",
+        "lemma": "ὑποταγή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑποταγῇ",
+        "children": [
+          {
+            "text": "अधीनता",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "के",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "साथ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11610",
+        "lemma": "δέ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δὲ",
+        "children": [
+          {
+            "text": "परन्तु",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20100",
+        "lemma": "ἐπιτρέπω",
+        "morph": "Gr,V,IPA1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπιτρέπω",
+        "children": [
+          {
+            "text": "मैं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11350",
+        "lemma": "γυνή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γυναικὶ",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "स्त्री",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "को",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G13210",
+        "lemma": "διδάσκω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διδάσκειν",
+        "children": [
+          {
+            "text": "शिक्षा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "देने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "की",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37610",
+        "lemma": "οὐδέ",
+        "morph": "Gr,CO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐδὲ",
+        "children": [
+          {
+            "text": "या",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04350",
+        "lemma": "ἀνήρ",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀνδρός",
+        "children": [
+          {
+            "text": "एक",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "पुरूष",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08310",
+        "lemma": "αὐθεντέω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐθεντεῖν",
+        "children": [
+          {
+            "text": "पर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "अधिकार",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "चलाने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "की",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20100",
+        "lemma": "ἐπιτρέπω",
+        "morph": "Gr,V,IPA1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπιτρέπω",
+        "children": [
+          {
+            "text": "अनुमति",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,DO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐκ",
+        "children": [
+          {
+            "text": "नहीं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20100",
+        "lemma": "ἐπιτρέπω",
+        "morph": "Gr,V,IPA1,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπιτρέπω",
+        "children": [
+          {
+            "text": "देता",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02350",
+        "lemma": "ἀλλά",
+        "morph": "Gr,CO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλλ’",
+        "children": [
+          {
+            "text": "परन्तु",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G22710",
+            "lemma": "ἡσυχία",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἡσυχίᾳ",
+            "children": [
+              {
+                "text": "चुपचाप",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15100",
+        "lemma": "εἰμί",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἶναι",
+        "children": [
+          {
+            "text": "रहे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "क्योंकि",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00760",
+        "lemma": "Ἀδάμ",
+        "morph": "Gr,N,,,,,NMSI",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Ἀδὰμ",
+        "children": [
+          {
+            "text": "आदम",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G44130",
+        "lemma": "πρῶτος",
+        "morph": "Gr,NS,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πρῶτος",
+        "children": [
+          {
+            "text": "पहले",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41110",
+        "lemma": "πλάσσω",
+        "morph": "Gr,V,IAP3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπλάσθη",
+        "children": [
+          {
+            "text": "रचा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "गया",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15340",
+        "lemma": "εἶτα",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἶτα",
+        "children": [
+          {
+            "text": "फिर",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20960",
+        "lemma": "Εὕα",
+        "morph": "Gr,N,,,,,NFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Εὕα",
+        "children": [
+          {
+            "text": "हव्वा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00760",
+        "lemma": "Ἀδάμ",
+        "morph": "Gr,N,,,,,NMSI",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Ἀδὰμ",
+        "children": [
+          {
+            "text": "आदम",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "को",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05380",
+        "lemma": "ἀπατάω",
+        "morph": "Gr,V,IAP3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἠπατήθη",
+        "children": [
+          {
+            "text": "धोखा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,DO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐκ",
+        "children": [
+          {
+            "text": "नहीं",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05380",
+        "lemma": "ἀπατάω",
+        "morph": "Gr,V,IAP3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἠπατήθη",
+        "children": [
+          {
+            "text": "दिया",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "गया",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "था",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11610",
+        "lemma": "δέ",
+        "morph": "Gr,CO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δὲ",
+        "children": [
+          {
+            "text": "परन्तु",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G11350",
+            "lemma": "γυνή",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "γυνὴ",
+            "children": [
+              {
+                "text": "स्त्री",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G18180",
+        "lemma": "ἐξαπατάω",
+        "morph": "Gr,V,PAP,NFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐξαπατηθεῖσα",
+        "children": [
+          {
+            "text": "धोखा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "खाते",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "हुए",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38470",
+        "lemma": "παράβασις",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παραβάσει",
+        "children": [
+          {
+            "text": "अपराध",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10960",
+        "lemma": "γίνομαι",
+        "morph": "Gr,V,IEA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γέγονεν",
+        "children": [
+          {
+            "text": "आ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "गई",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "। \n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11610",
+        "lemma": "δέ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δὲ",
+        "children": [
+          {
+            "text": "परन्तु",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G49820",
+        "lemma": "σῴζω",
+        "morph": "Gr,V,IFP3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σωθήσεται",
+        "children": [
+          {
+            "text": "वह",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῆς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G50420",
+            "lemma": "τεκνογονία",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "τεκνογονίας",
+            "children": [
+              {
+                "text": "बच्चों",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "के",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "type": "text",
+                "text": " "
+              },
+              {
+                "text": "जनने",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ],
+            "endTag": "zaln-e\\*"
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12230",
+        "lemma": "διά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διὰ",
+        "children": [
+          {
+            "text": "द्वारा",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G49820",
+        "lemma": "σῴζω",
+        "morph": "Gr,V,IFP3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σωθήσεται",
+        "children": [
+          {
+            "text": "बचाई",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "जाएगी",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": ", "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14370",
+        "lemma": "ἐάν",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐὰν",
+        "children": [
+          {
+            "text": "यदि",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33060",
+        "lemma": "μένω",
+        "morph": "Gr,V,SAA3,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μείνωσιν",
+        "children": [
+          {
+            "text": "वे",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41020",
+        "lemma": "πίστις",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πίστει",
+        "children": [
+          {
+            "text": "विश्वास",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G49970",
+        "lemma": "σωφροσύνη",
+        "morph": "Gr,N,,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σωφροσύνης",
+        "children": [
+          {
+            "text": "संयम",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33260",
+        "lemma": "μετά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μετὰ",
+        "children": [
+          {
+            "text": "सहित",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00260",
+        "lemma": "ἀγάπη",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀγάπῃ",
+        "children": [
+          {
+            "text": "प्रेम",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "और",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00380",
+        "lemma": "ἁγιασμός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἁγιασμῷ",
+        "children": [
+          {
+            "text": "पवित्रता",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "में",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33060",
+        "lemma": "μένω",
+        "morph": "Gr,V,SAA3,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μείνωσιν",
+        "children": [
+          {
+            "text": "बने",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "text": "रहें",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "endTag": "zaln-e\\*"
+      },
+      {
+        "type": "text",
+        "text": "।\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

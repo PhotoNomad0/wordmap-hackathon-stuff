@@ -201,7 +201,7 @@ function getAlignmentsForTarget(targetLang, bookId) {
 export async function doWordMapIterations(targetLang, parameter = 'alignmentPosition', start = 0.1, end = 1, stepSize = 0.1) {
   const chapterCount = 24;
   const doAlignments = true;
-  const bookId = ['luk', 'eph'];
+  const bookId = ['1ti', '2ti'];
   const recording = [];
   const wordMapOpts = {
     targetNgramLength: 5,
@@ -234,7 +234,7 @@ export async function doWordMapIterations(targetLang, parameter = 'alignmentPosi
     wordMapErrorFunction(parameter, pass);
   }
 
-  console.log("DONE");
+  console.log(`${parameter} - DONE!`);
   return recording;
 }
 
