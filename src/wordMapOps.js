@@ -51,7 +51,9 @@ export function getAlignmentsByVerse(alignment_data) {
   for (const a of alignment_data) {
     const reference = a.reference;
     if (!reference) {
-      console.log('stugg');
+      const errMsg = `missing reference in: ${JSON.stringify(a)}`;
+      console.log(errMsg);
+      throw new Error(errMsg);
     }
     let bookAlign = alignmentsByBook[reference.bookId];
     if (!bookAlign) {
@@ -387,11 +389,11 @@ export function initCorpusFromTargetAndSource(target, source, map) {
 //   return {};
 // }
 
-export async function initCorpus(map, baseFolder, bookId, chapterCount) {
-  if (baseFolder) {
-    const {target, source} = await loadTargetAndSource(baseFolder);
-    const corpus = initCorpusFromTargetAndSource(target, source, map);
-    return {target, source, corpus};
-  }
-  return {};
-}
+// export async function initCorpus(map, baseFolder, bookId, chapterCount) {
+//   if (baseFolder) {
+//     const {target, source} = await loadTargetAndSource(baseFolder);
+//     const corpus = initCorpusFromTargetAndSource(target, source, map);
+//     return {target, source, corpus};
+//   }
+//   return {};
+// }
