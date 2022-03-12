@@ -121,6 +121,11 @@ export function elapsedSecs(start, end) {
 
 function getBibleContent(folder) {
   const content = {};
+  if (!fs.existsSync(folder)) {
+    const errMsg = `getBibleContent() - Folder does not exist '${folder}'`;
+    console.log(errMsg);
+    throw new Error(errMsg);
+  }
   for (let chapter = 1; chapter <= 200; chapter++) {
     const chapterData = {};
     const chapterPath = `${folder}/${chapter}.json`;
@@ -192,6 +197,11 @@ function getAlignmentsForTarget(targetLang, bookId) {
   let alignment_data = [ ];
   for (const bookId of books) {
     const alignmentDataPath = `./src/resources/${targetLang}/alignments_for_${bookId}.json`;
+    if (!fs.existsSync(alignmentDataPath)) {
+      const errMsg = `getAlignmentsForTarget() - File does not exist '${alignmentDataPath}'`;
+      console.log(errMsg);
+      throw new Error(errMsg);
+    }
     const alignment_data_ = fs.readJsonSync(alignmentDataPath);
     alignment_data = alignment_data.concat(alignment_data_);
   }

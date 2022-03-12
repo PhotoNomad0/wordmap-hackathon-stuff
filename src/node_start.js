@@ -17,7 +17,9 @@ async function doParameterAnalysis(targetLang, parameter, start, end, stepSize) 
   const results = await doWordMapIterations(targetLang, parameter, start, end, stepSize);
   const books = results[0].bookId;
   const bookStr = arrayToStr(books);
-  const outputFolder = path.join('./public/analysisData', targetLang, bookStr);
+  const doAlignments = results[0].doAlignments;
+  const alignmentStr = doAlignments ? 'withAlignment_' : 'withoutAlignment_';
+  const outputFolder = path.join('./public/analysisData', `${alignmentStr}${targetLang}`, bookStr);
   fs.ensureDirSync(outputFolder);
   fs.writeJsonSync(path.join(outputFolder, `${parameter}.json`), results);
   const endTime = new Date();
@@ -27,7 +29,7 @@ async function doParameterAnalysis(targetLang, parameter, start, end, stepSize) 
 
 async function doRun() {
   saveIndex(PUBLIC_DATA); // make sure changes are updated before long run
-  const targetLang = 'hi';
+  const targetLang = 'en';
   const startTime = new Date();
   const engineWeights = Object.keys(initialEngineWeights).sort();
   for (const parameter of engineWeights) {
